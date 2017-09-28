@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta charset="utf-8" />
+
+    <title>OpenJDK Ins and Outs</title>
+
+    <meta name="description" content="How to engage in the OpenJDK project." />
+    <meta name="author" content="Volker H. Simonis" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/css/theme/jet2015.css" id="theme" />
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/monokai_sublime.css" />
+
+  <style type="text/css">
+.scrollable {
+    bottom: 0px;
+    overflow-y: auto  !important;
+    overflow-x: hidden !important;
+}
+
+.reveal .big {
+    font-size: .7em;
+    line-height: 1.4em;
+}
+
+.reveal pre.console {
+    background-color: black;
+    color: #00ff00;
+}
+
+.reveal pre.noshadow {
+    border-radius: uset;
+    box-shadow: unset;
+}
+
+.reveal pre code {
+    max-height: 98%;
+}
+.reveal p>code, .reveal li>code, .reveal a>code {
+    font-size-adjust: .5;
+}
+
+.reveal section img {
+    margin: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.reveal .slides section .fragment.console_2, .reveal .slides section .fragment.console_3 {
+    opacity: 1;
+    visibility: visible;
+}
+.reveal .slides section .fragment.console_2.visible {
+    color: #ffffff;
+}
+.reveal .slides section .fragment.console_3.visible {
+    color: #AE81FF;
+}
+.reveal ol, .reveal dl, .reveal ul {
+    line-height: 1.5;
+}
+.reveal ul {
+    list-style-type: square;
+}
+.reveal ul ul {
+    list-style-type: disc;
+}
+  </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!--
+      Issue #1105: Keyboard shortcut to skip forward/back over fragments #1173
+      https://github.com/hakimel/reveal.js/pull/1173
+    -->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h4>How to engage in the OpenJDK project</h4>
+	  <img class="plain" data-src="images/OpenJDK_logo_transparent.png" alt="OpenJDK logo"/>
+          <h1>Ins and Outs</h1>
+          <p>
+            <small>Volker Simonis, SAP / <a href="mailto:volker.simonis@gmail.com">volker.simonis@gmail.com</a></small>
+          </p>
+        </section>
+
+        <section>
+
+          <h3 style="text-transform: none;"><a href="https://github.com/simonis/OpenJDKInsAndOuts">https://github.com/simonis/OpenJDKInsAndOuts</a></h3>
+
+          <h3 style="text-transform: none;"><a href="https://rawgit.com/simonis/OpenJDKInsAndOuts/master/openjdk.xhtml#/">https://rawgit.com/simonis/OpenJDKInsAndOuts/master/openjdk.xhtml</a></h3>
+
+        </section>
+
+        <section>
+          <h2>The OpenJDK Project</h2>
+
+          <p>
+            <a href="http://openjdk.java.net">http://openjdk.java.net/</a>
+          </p>
+
+          <ul>
+            <li>Open Source implementation of Java SE</li>
+            <li>Licensed under <b>GPLv2</b> (with Classpath exception)</li>
+            <li>Reference implementation for Java 7, 8, 9, ..</li>
+            <li>Collaboration space for different implementers:
+              <ul>
+                <li>RedHat, SAP, IBM, Google, Intel, Twitter, Azul</li>
+              </ul>
+            </li>
+            <li>Playground for Java SE related projects:
+              <ul>
+                <li>Coin, InvokeDynamic, Lambda, Nashorn, Jigsaw, ...</li>
+                <li>Graal, Panama, Valhalla, Shanandoa, Metropolis, Loom ...</li>
+              </ul>
+            </li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>
+            The <a href="http://www.oracle.com/technetwork/oca-405177.pdf">Oracle Contribution Agreement</a> (<b>OCA</b>)
+          </h2>
+
+          <ul>
+            <li>Copyright and patent sharing agreement with regard to your contribution
+              <ul>
+                <li>Simple dual licensing model</li>
+              </ul>
+            </li>
+            <li>Both, you and Oracle, can treat your contribution as if they were the sole owners</li>
+            <li>Oracle guarantees to always publish any contribution under a suitable<br/>
+              <a href="http://www.fsf.org">Free Software Foundation</a> (FSF) or <a href="http://www.opensource.org">Open Source Initiative</a>
+              (OSI) approved license.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>OpenJDK and the Java&trade;</h2>
+
+          <ul>
+            <li>You are not allowed to call it Java&trade; (or Java&trade; compatible) because:
+              <ul>
+                <li>"Java" is a registered trademark</li>
+                <li>You don't get access to the Technology Compatibility Kit (<b>TCK</b>)</li>
+              </ul>
+            </li>
+
+            <li>Accessing the <a href="http://en.wikipedia.org/wiki/Technology_Compatibility_Kit">TCK</a>
+              requires the signing of the<br/><a href="http://openjdk.java.net/legal/octla-java-se-8.pdf">
+                OpenJDK Community TCK License Agreement</a> (<b>OCTLA</b>)
+              <!-- OCTLA 6: http://openjdk.java.net/legal/openjdk-tck-license.pdf
+                   OCTLA 7: http://openjdk.java.net/legal/OpenJDK-TCK_SE7_27Dec2011.pdf-->
+              <ul>
+                <li>Only for OpenJDK or "substantially derived" projects</li>
+                <li>OCTLA forbids disclosing TCK information to non-OCTLA licensees</li>
+              </ul>
+            </li>
+            <li>OCTLA is no trademark license!</li>
+
+            <li>"OpenJDK" can be used according to the
+              "<a href="http://openjdk.java.net/legal/openjdk-trademark-notice.html">OpenJDK
+                Trademark Notice</a>"</li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2><a href="http://openjdk.java.net/bylaws">OpenJDK <b>Bylaws</b></a></h2>
+
+          <ul>
+            <li>The "constitution" of the OpenJDK project</li>
+            <li>Define OpenJDK <a href="http://openjdk.java.net/bylaws#_4"><b>Groups</b></a>,
+              <a href="http://openjdk.java.net/bylaws#_6"><b>Projects</b></a> and
+              <a href="http://openjdk.java.net/bylaws#_2"><b>Roles</b></a></li>
+            <li>Define the <a href="http://openjdk.java.net/bylaws#_9"><b>Governing Board</b></a>
+              which manages<br/> the structure and operation of the OpenJDK community
+              <ul>
+                <li>Chair (appointed by Oracle): <b>Georges Saab</b></li>
+                <li>Vice-Chair (appointed by IBM): <b>John Duimovich</b></li>
+                <li>OpenJDK Lead (appointed by Oracle): <b>Mark Reinhold</b></li>
+                <li>At-Large Member (elected by OpenJDK Members): <b>Doug Lea</b>, SUNY Oswego</li>
+                <li>At-Large Member (elected by OpenJDK Members): <b>Andrew Haley</b>, RedHat</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>OpenJDK Organisation</h2>
+
+          <ul>
+            <li><a href="http://openjdk.java.net/bylaws#participant"><b>Participants</b></a>: 
+              individuals who subscribed to an OpenJDK mailing list</li>
+            <li><a href="http://openjdk.java.net/bylaws#contributor"><b>Contributors</b></a>: Participants who signed the OCA</li>
+            <li><a href="http://openjdk.java.net/bylaws#_4"><b>Groups</b></a> (currently 22)
+              <ul>
+                <li>consist of <a href="http://openjdk.java.net/bylaws#group-member"><b>Group Members</b></a> 
+                  and a <a href="http://openjdk.java.net/bylaws#group-lead"><b>Group Lead</b></a>
+                  <ul>
+                    <li>Group Members elect new Group Members from Contributors</li>
+                  </ul>
+                </li>
+                <li>sponsor Projects</li>
+              </ul>
+            </li>
+            <li><a href="http://openjdk.java.net/bylaws#_6"><b>Projects</b></a> (currently 60)
+              <ul>
+                <li>produce artifacts (code, documentation, whole JDK releases)</li>
+                <li>have code repositories, mailing lists and possibly web content</li>
+                <li>consist of <a href="http://openjdk.java.net/bylaws#author"><b>Authors</b></a>,
+                  <a href="http://openjdk.java.net/bylaws#committer"><b>Committers</b></a>,
+                  <a href="http://openjdk.java.net/bylaws#reviewer"><b>Reviewers</b></a>
+                  and a <a href="http://openjdk.java.net/bylaws#project-lead"><b>Project Lead</b></a>
+                  <ul>
+                    <li>Project Leads appoint Authors from Contributors</li>
+                    <li>Committers elect new Committers from Authors</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+<!--
+    <li><b>OpenJDK Members</b>
+      <ul>
+        <li>elected by existing OpenJDK Members from Group Members and Committers</li>
+      </ul>
+    </li>  
+-->
+</ul>
+
+        </section>
+
+        <section>
+          <h2>OpenJDK Infrastructure</h2>
+
+          <ul>
+            <li>The <a href="http://openjdk.java.net">OpenJDK</a> Homepage</li>
+            <li>Too many <a href="http://hg.openjdk.java.net/">Mercurial repositories</a>
+              <ul>
+                <li>Before jdk10 in fact "<em>forests</em>" of 7 nested sub-repositories</li>
+              </ul>
+            </li>
+            <li>Way to many <a href="http://mail.openjdk.java.net/mailman/listinfo">mailing lists</a> (currently ~172)
+              <!--
+                  <ul>
+                    <li>Subscription required in order to post to a list!</li>
+                  </ul>
+               -->
+            </li>
+            <li>The JDK Bug System <a href="https://bugs.openjdk.java.net">https://bugs.openjdk.java.net</a></li>
+            <li>Code review server <a href="http://cr.openjdk.java.net/">http://cr.openjdk.java.net</a>
+              <ul>
+                <li>For review requests in <a href="http://openjdk.java.net/guide/webrevHelp.html">Webrev</a> format</li>
+                <li>Must be at least Author to get access</li>
+              </ul>
+            </li>
+            <li>The OpenJDK Wiki <a href="https://wiki.openjdk.java.net">https://wiki.openjdk.java.net</a>
+              <ul>
+                <li>Must be a group member to get write access</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>OpenJDK Tools - Mercurial</h2>
+
+          <ul>
+            <li><a href="http://mercurial.selenic.com/">Mercurial</a> is a distributed
+              source control system implemented in Python.</li>
+            <li>OpenJDK uses nested sub-repositories (i.e. "<em>forest</em>"):
+              <ul>
+                <li>clone them (corba, hotspot, jaxp, jaxws, jdk, langtools, nashorn) manually:</li>
+                <div>
+                  <pre class="big noshadow" data-trim="true">
+                    <code style="color: #ffffff; background-color: #000000;" class="nohighlight" text-trim="true" data-noescape="true">
+<![CDATA[
+> hg clone http://hg.openjdk.java.net/jdk9/dev jdk9-dev
+> cd jdk9-dev
+> hg clone http://hg.openjdk.java.net/jdk9/dev/corba
+...
+> hg clone http://hg.openjdk.java.net/jdk9/dev/nashorn
+]]>
+                    </code>
+                  </pre>
+                </div>
+              </ul>
+              <ul>
+                <li>or use the <a href="http://hg.openjdk.java.net/jdk9/jdk9/file/tip/get_source.sh"><code>get_source.sh</code></a>
+                  script which does the same in parallel:</li>
+                <div>
+                  <pre class="big noshadow" data-trim="true">
+                    <code style="color: #ffffff; background-color: #000000;" class="nohighlight" text-trim="true" data-noescape="true">
+<![CDATA[
+> hg clone http://hg.openjdk.java.net/jdk9/dev jdk9-dev
+> cd jdk9-dev
+> sh get_source.sh
+]]>
+                    </code>
+                  </pre>
+                </div>
+              </ul>
+            </li>
+                <li>Use <a href="http://hg.openjdk.java.net/jdk9/jdk9/file/tip/common/bin/hgforest.sh"><code>common/bin/hgforest.sh</code></a>
+                  to execute <code>hg</code> commands in all repositories</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>OpenJDK Tools - Mercurial</h2>
+
+          <ul>
+            <li>In jdk10 the "<em>forests</em>" are gone!
+              <ul>
+                <li><a href="http://openjdk.java.net/jeps/296">JEP 296: Consolidate the JDK Forest into a Single Repository</a></li>
+              </ul>
+            </li>
+            <li>One <em>fat</em> repo</li>
+            <li>Cloning takes longer (not parallelized any more)</li>
+            <li>Less confusing for new users</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Building the OpenJDK</h2>
+
+          <ul>
+            <li>Use a <a href="https://wiki.openjdk.java.net/display/Build/Supported+Build+Platforms">Supported Build Platform</a></li>
+            <li>Favour Linux over MacOS X and Windows</li>
+            <li>Don't build jdk7 any more :) - since jdk8 the build is <code>configure</code>-based</li>
+            <li>jdk8 build instructions are in <a href="http://hg.openjdk.java.net/jdk8/jdk8/raw-file/tip/README-builds.html">README-builds.html</a></li>
+            <li>jdk9 build instructions are in <a href="http://hg.openjdk.java.net/jdk9/jdk9/raw-file/tip/common/doc/building.html">common/doc/building.html</a></li>
+            <li>Have a look at the <a href="https://adoptopenjdk.net"> AdoptOpenJDK projekt</a></li>
+            <li>Use your favorite search engine extensively :)</li>
+            <li>Ask on <a href="mailto:build-dev@openjdk.java.net">build-dev@openjdk.java.net</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Building the OpenJDK</h2>
+
+          <pre style="color: gray; background-color: #000000;" class="big" data-trim="true">
+<span class="fragment console_2">&gt; mkdir output-jdk9-dev-dbg &amp;&amp; cd output-jdk9-dev-dbg</span>
+<span class="fragment console_2">&gt; bash ...jdk9-dev/configure --disable-zip-debug-info --with-debug-level=slowdebug</span>
+<span class="fragment console_3">...</span>
+<span class="fragment console_2">&gt; make images LOG=debug</span>
+<span class="fragment console_3">...
+Start 2015-09-24 20:24:53
+End   2015-09-24 20:32:54
+00:08:01 TOTAL</span>
+<span class="fragment console_2">&gt; ./images/jdk/bin/java -version</span>
+<span class="fragment console_3">openjdk version "1.9.0-internal-debug"
+OpenJDK Runtime Environment (build 1.9.0-internal-debug-simonis_2015_09_23-b00)
+OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23-b00, mixed mode)</span>
+          </pre>
+
+          <p>On error use &ldquo;<code>make images JOBS=1</code>&rdquo; and take a look at &ldquo;<code>build.log</code>&rdquo;</p>
+<!--
+- - - - - Build times - - - - - - -
+Start 2015-09-23 11:55:23
+End   2015-09-23 12:13:13
+00:01:11 verify-modules
+00:17:50 TOTAL
+- - - - - - - - - - - - - - - - - - - - - - - - -
+/bin/bash /share/OpenJDK/jdk9-dev/common/bin/logger.sh /share/output-jdk9-dev-dbg/build.log /usr/bin/printf "Finished building target 'images' in configuration '/share/output-jdk9-dev-dbg'\n"
+Finished building target 'images' in configuration '/share/output-jdk9-dev-dbg'
+make[1]: Leaving directory `/share/OpenJDK/jdk9-dev'
+simonis@simonis:/share/output-jdk9-dev-dbg$ ./images/jdk/bin/java -version
+openjdk version "1.9.0-internal-debug"
+OpenJDK Runtime Environment (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b00)
+OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b00, mixed mode)
+-->
+        </section>
+
+        <section>
+          <h2>OpenJDK Tools - <a href="http://openjdk.java.net/jtreg/"><code style="text-transform: none;"><b>JTreg</b></code></a></h2>
+
+          <ul>
+            <li><code>JTreg</code>
+              is a Regression Test Harness for the OpenJDK platform
+            </li>
+            <li>The same harness which is used to run the TCK/JCK test suite</li>
+            <li>Test can consist of single or multiple Java/C/C++/ShellScript/HTML files
+              <ul>
+                <li>Tests are automatically discovered by the harness
+                  trough <a href="http://openjdk.java.net/jtreg/tag-spec.html">embedded
+                    tags</a></li>
+                <li>Check
+                  the <a href="http://openjdk.java.net/jtreg/faq.html"><code>JTreg</code>
+                    FAQ</a> or have a look at the tests
+                  under <a href="http://hg.openjdk.java.net/jdk9/jdk9/jdk/file/tip/test/"><span class="code">jdk/test/</span></a></li>
+              </ul>
+            </li>
+            <li>Can execute <a href="http://junit.org/">JUnit</a> and <a href="http://testng.org">TestNG</a> tests</li>
+            <li>See <a href="http://download.java.net/openjdk/testresults/9">JDK 9 Early Access Build Test Results</a> and<br/>
+              <a href="http://download.java.net/openjdk/testresults/8">JDK 8 Update Releases Early Access Build Test Results</a></li>
+            <li>Binaries are available from the <a href="https://java.net/projects/adoptopenjdk/pages/InstallJtreg">AdoptOpenJDK project</a></li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>OpenJDK Tools - webrev</h2>
+
+          <ul>
+            <li><a href="http://openjdk.java.net/guide/webrevHelp.html">Webrev</a> is a "poor man's"
+              code review system (e.g. <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/8081674.jdk/">webrev for Bug 8081674</a>)</li>
+            <li>A collection of diffs and patches in different formats</li>
+            <li>Ability to graphically display diffs in HTML-frames</li>
+            <li>May include additional HTML-formatted documentation</li>
+            <li>Ability to automatically link back to Java bugs at <a href="https://bugs.openjdk.java.net">https://bugs.openjdk.java.net</a></li>
+            <li>Simple Korn shell script available from
+              <a href="http://hg.openjdk.java.net/code-tools/webrev/raw-file/tip/webrev.ksh">http://hg.openjdk.java.net/code-tools/webrev</a></li>
+            <div>
+              <pre class="big noshadow" data-trim="true">
+                <code style="color: #ffffff; background-color: #000000;" class="nohighlight" data-trim="true">
+<![CDATA[
+> cd jdk
+> ksh webrev.ksh -o /tmp -O -c 8081674 -i 8081674.html
+> unzip -l /tmp/webrev.zip
+...
+     5643  2015-09-25 17:36   webrev/raw_files/old/src/.../jni_util.c
+     8643  2015-09-25 17:36   webrev/index.html
+---------                     -------
+   320695                     75 files
+]]>
+                </code>
+              </pre>
+            </div>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Finding a Bug</h2>
+
+          <ul>
+            <li>Search for the bug in the bug database <a href="https://bugs.openjdk.java.net">https://bugs.openjdk.java.net</a>
+              <ul>
+                <li>Not all bugs are visible (security bugs, customer bugs, ..)</li>
+              </ul>
+            </li>
+            <li>Try to reproduce the bug with the latest build (<a href="http://jdk8.java.net">http://jdk8.java.net</a>,
+              <a href="http://jdk9.java.net">http://jdk9.java.net</a>)</li>
+            <li>Try with a debug build (you'll have to build it!) - this may give you more insights</li>
+            <li>Try to write a simple reproducer (if possible a <code>JTreg</code> test)</li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2><a href="http://openjdk.java.net/contribute/">Fixing a Bug</a></h2>
+
+          <ul>
+            <li>Bugs must be fixed in a development code line first!</li>
+            <li>Fix the bug in the repository of the team that's responsible for the code
+              <ul>
+                <li><a href="http://hg.openjdk.java.net/jdk9/client/jdk/file/tip">http://hg.openjdk.java.net/jdk9/client/jdk</a> for AWT/Swing problems or <br/>
+                  <a href="http://hg.openjdk.java.net/jdk9/hs-comp/hotspot/file/tip">http://hg.openjdk.java.net/jdk9/hs-comp/hotspot</a> for a JIT bug, etc...
+                </li>
+              </ul>
+            </li>
+            <li>Consider all the platforms the OpenJDK may run on</li>
+            <li>Create a <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/8132374">Webrev</a> of your fix and upload it to your web-space</li>
+            <li>Submit your fix to the appropriate mailing list:
+              <br/><a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34630">
+              RFR(XS): 8132374: AIX: fix value of os.version property</a> (Author request)<br/>
+              <a href="http://mail.openjdk.java.net/pipermail/jdk9-dev/2015-September/thread.html#2663">[patch] JDK-4906983</a> (Contributor request)</li>
+            <li>Be ready to discuss, defend and <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/">improve</a> your fix
+              <a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34589">several</a>
+              <a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-August/thread.html#34835">rounds</a></li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2><a href="http://openjdk.java.net/jeps/0">The Java Enhancement Process (<b>JEP</b>)</a></h2>
+
+          <ul>
+            <li>Collect, review, sort, and record proposals for enhancements to the JDK</li>
+            <li><a href="http://openjdk.java.net/jeps/1">JEP 1: JDK Enhancement-Proposal &amp; Roadmap Process</a> defines the process</li>
+            <li>Simpler than a <a href="https://www.jcp.org">Java Community Process</a> (<b>JCP</b>) <a href="https://www.jcp.org/en/jsr/overview">Java Specification Request</a> (<b>JSR</b>)
+              <ul>
+                <li>Specification changes still require a JSR</li>
+              </ul>
+            </li>
+            <li>The JEP process is still dominated by Oracle:
+              <ul>
+                <li>requires endorsement and funding by <a href="http://openjdk.java.net/bylaws#group-lead">Group Leads</a></li>
+                <li>The <a href="http://openjdk.java.net/bylaws#openjdk-lead">OpenJDK Lead</a>
+                  (appointed by Oracle) ultimately<br/> decides which JEPs to include into the Roadmap.</li>
+              </ul>
+            </li>
+            <li>Still attractive for &ldquo;implementation enhancements&rdquo; (i.e. new Ports, GCs, JITs, ..)</li>
+          </ul>
+        </section>
+
+        <section data-background="images/Flammarion.jpg"
+                 data-background-size="60%">
+          &nbsp;
+        </section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1366,
+        height: 768,
+        // margin: 0.1, // Old setting which was used in the reveal.js version used for the JET2015 presentation
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
