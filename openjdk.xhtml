@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
 
     <link rel="stylesheet" href="reveal.js/css/reveal.css" />
-    <link rel="stylesheet" href="reveal.js/css/theme/jet2015.css" id="theme" />
+    <link rel="stylesheet" href="reveal.js/css/theme/jbreak2016.css" id="theme" />
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="reveal.js/lib/css/monokai_sublime.css" />
@@ -28,9 +28,15 @@
     overflow-x: hidden !important;
 }
 
+.reveal .slides > section.demo,
+.reveal .slides > section > section.demo {
+    padding: 0;
+    height: 100%;
+}
+
 .reveal .big {
     font-size: .7em;
-    line-height: 1.4em;
+    line-height: 1.3em;
 }
 
 .reveal pre.console {
@@ -38,13 +44,17 @@
     color: #00ff00;
 }
 
+code.terminal .hljs-title {
+    color: #00ff00;
+}
+
 .reveal pre.noshadow {
-    border-radius: uset;
+    border-radius: 0;
     box-shadow: unset;
 }
 
 .reveal pre code {
-    max-height: 98%;
+    max-height: 100%;
 }
 .reveal p>code, .reveal li>code, .reveal a>code {
     font-size-adjust: .5;
@@ -56,25 +66,202 @@
     border: none;
     box-shadow: none;
 }
-.reveal .slides section .fragment.console_2, .reveal .slides section .fragment.console_3 {
-    opacity: 1;
-    visibility: visible;
+
+.reveal .outline_white {
+    color: white;
+    text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+    min-height: 1.1em;
+    text-align: center;
 }
-.reveal .slides section .fragment.console_2.visible {
-    color: #ffffff;
+.reveal .outline_black {
+    color: black;
+    text-shadow:
+        -2px -2px 0 #fff,
+         2px -2px 0 #fff,
+        -2px  2px 0 #fff,
+         2px  2px 0 #fff;
+    min-height: 1.1em;
+    text-align: center;
 }
-.reveal .slides section .fragment.console_3.visible {
-    color: #AE81FF;
+
+.reveal .slide-number {
+    position: fixed;
+    display: block;
+    left: 15px;
+    bottom: 15px;
+    opacity: 0.9;
+    z-index: 31;
+    font-size: 14px;
+    font-family: inherit;
+    color: #268bd2;
+    background-color: inherit;
 }
-.reveal ol, .reveal dl, .reveal ul {
-    line-height: 1.5;
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    text-transform: none;
 }
-.reveal ul {
-    list-style-type: square;
+
+.hljs-class .hljs-title {
+    /* fix "public static class Y extends X {" such that 'Y' will be formatted the same like 'X' */
+    color: #A6E22E;
+    font-style: italic;
 }
-.reveal ul ul {
-    list-style-type: disc;
+
+mark {
+    color: black;
+    background-color: yellow;
+    border-radius: 10px;
 }
+mark.orange {
+    color: black;
+    background-color: orange;
+    border-radius: 10px;
+}
+mark.border {
+    color: inherit;
+    background-color: inherit;
+    border: 5px solid #1B91FF;
+    border-radius: 10px;
+}
+mark.border-no-top {
+    color: inherit;
+    background-color: inherit;
+    border: 5px solid #1B91FF;
+    border-width: 0px 5px 5px 5px;
+    border-radius: 0px 0px 10px 10px;
+}
+mark.border-no-bottom {
+    color: inherit;
+    background-color: inherit;
+    border: 5px solid #1B91FF;
+    border-width: 5px 5px 0px 5px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.reveal .slides section .fragment.highlight-border, .reveal .slides section .fragment.highlight-current-border {
+  opacity: 1;
+  visibility: visible;
+}
+.reveal .slides section .fragment.highlight-border.visible {
+  border: 5px solid #1B91FF;
+  border-radius: 10px;
+}
+.reveal .slides section .fragment.highlight-current-border.current-fragment {
+  border: 5px solid #1B91FF;
+  border-radius: 10px;
+}
+  table.calling_hirarchy {
+/*    font-family: monospace, arial, helvetica, sans-serif; */
+/*    background-color: #ffffff; */
+    font-size: smaller;
+    border-collapse: collapse;
+    margin: 0px auto;
+    padding: 2px;
+    width: auto;
+    overflow: auto;
+    border: none;
+  }
+
+  table.calling_hirarchy tr {
+    border: none;
+  }
+
+  table.calling_hirarchy td {
+    padding: 4px;
+/*    font-family: monospace; */
+  }
+
+  td.indent_level_0 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #a0a0a0;
+  }
+  td.indent_level_1 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #a8a8a8;
+  }
+  td.indent_level_2 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #b0b0b0;
+  }
+  td.indent_level_3 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #b8b8b8;
+  }
+  td.indent_level_4 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #c0c0c0;
+  }
+  td.indent_level_5 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #c8c8c8;
+  }
+  td.indent_level_6 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #d0d0d0;
+  }
+  td.indent_level_7 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #d8d8d8;
+  }
+  td.indent_level_8 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #e0e0e0;
+  }
+  td.indent_level_9 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #e8e8e8;
+  }
+  td.indent_level_10 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #f0f0f0;
+  }
+  td.indent_level_11 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #f8f8f8;
+  }
+  td.indent_level_12 {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffffff;
+  }
+  td.functionCall {
+/*    font-weight: bold; */
+    color: darkblue;
+  }
+  td.javaCall {
+    font-weight: bold;
+    color: darkgreen;
+  }
+  td.comment {
+    font-style: italic;
+    color: maroon;
+  }
+  td.highlight {
+    border-style: solid;
+    border-width: 2px;
+    background-color: #a0ffa0;
+  }
+  table.calling_hirarchy td[rowspan] {
+    border-style: none;
+    border-width: 0;
+    border-left: dotted;
+    border-left-width: 2px;
+  }
   </style>
 
     <!-- Printing and PDF exports -->
@@ -301,14 +488,12 @@
                 <li>clone them (corba, hotspot, jaxp, jaxws, jdk, langtools, nashorn) manually:</li>
                 <div>
                   <pre class="big noshadow" data-trim="true">
-                    <code style="color: #ffffff; background-color: #000000;" class="nohighlight" text-trim="true" data-noescape="true">
-<![CDATA[
-> hg clone http://hg.openjdk.java.net/jdk9/dev jdk9-dev
-> cd jdk9-dev
-> hg clone http://hg.openjdk.java.net/jdk9/dev/corba
+                    <code class="terminal" data-trim="true" data-noescape="true">
+$ hg clone http:/&#8203;/hg.openjdk.java.net/jdk9/dev jdk9-dev
+$ cd jdk9-dev
+$ hg clone http:/&#8203;/hg.openjdk.java.net/jdk9/dev/corba
 ...
-> hg clone http://hg.openjdk.java.net/jdk9/dev/nashorn
-]]>
+$ hg clone http:/&#8203;/hg.openjdk.java.net/jdk9/dev/nashorn
                     </code>
                   </pre>
                 </div>
@@ -318,12 +503,10 @@
                   script which does the same in parallel:</li>
                 <div>
                   <pre class="big noshadow" data-trim="true">
-                    <code style="color: #ffffff; background-color: #000000;" class="nohighlight" text-trim="true" data-noescape="true">
-<![CDATA[
-> hg clone http://hg.openjdk.java.net/jdk9/dev jdk9-dev
-> cd jdk9-dev
-> sh get_source.sh
-]]>
+                    <code class="terminal" data-trim="true" data-noescape="true">
+$ hg clone http:/&#8203;/hg.openjdk.java.net/jdk9/dev jdk9-dev
+$ cd jdk9-dev
+$ sh get_source.sh
                     </code>
                   </pre>
                 </div>
@@ -367,22 +550,28 @@
         <section>
           <h2>Building the OpenJDK</h2>
 
-          <pre style="color: gray; background-color: #000000;" class="big" data-trim="true">
-<span class="fragment console_2">&gt; mkdir output-jdk9-dev-dbg &amp;&amp; cd output-jdk9-dev-dbg</span>
-<span class="fragment console_2">&gt; bash ...jdk9-dev/configure --disable-zip-debug-info --with-debug-level=slowdebug</span>
-<span class="fragment console_3">...</span>
-<span class="fragment console_2">&gt; make images LOG=debug</span>
-<span class="fragment console_3">...
-Start 2015-09-24 20:24:53
-End   2015-09-24 20:32:54
-00:08:01 TOTAL</span>
-<span class="fragment console_2">&gt; ./images/jdk/bin/java -version</span>
-<span class="fragment console_3">openjdk version "1.9.0-internal-debug"
-OpenJDK Runtime Environment (build 1.9.0-internal-debug-simonis_2015_09_23-b00)
-OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23-b00, mixed mode)</span>
+          <pre class="big noshadow" style="height:100%; margin: 0;" data-trim="true">
+            <code class="terminal" data-trim="true" data-noescape="true" style="">
+$ hg clone http:/&#8203;/hg.openjdk.java.net/jdk10/hs/ jdk10-hs
+$<span class="fragment" data-fragment-index="1"> cd jdk10-hs
+$</span><span class="fragment" data-fragment-index="2"> bash ./configure </span><span class="fragment" data-fragment-index="8"><mark class="border">--with-native-debug-symbols=external</mark> <mark class="border">--with-debug-level=slowdebug</mark></span>
+<span class="fragment" data-fragment-index="3">configure: Configuration created at Fri Sep 29 00:43:09 CEST 2017.
+...
+$</span><span class="fragment" data-fragment-index="4"> make images </span><span class="fragment" data-fragment-index="9"><mark class="border">LOG=debug</mark></span>
+<span class="fragment" data-fragment-index="5">...
+Start 2017-09-29 00:44:29
+End   2017-09-29 01:02:08
+00:17:39 TOTAL
+$</span><span class="fragment" data-fragment-index="6"> ./build/linux-x86_64-normal-server-slowdebug/images/jdk/bin/java -version</span>
+<span class="fragment" data-fragment-index="7">openjdk version "10-internal"
+OpenJDK Runtime Environment (slowdebug build 10-internal+0-adhoc.simonis.jdk10-hs)
+OpenJDK 64-Bit Server VM (slowdebug build 10-internal+0-adhoc.simonis.jdk10-hs mixed mode)</span>
+            </code>
           </pre>
 
-          <p>On error use &ldquo;<code>make images JOBS=1</code>&rdquo; and take a look at &ldquo;<code>build.log</code>&rdquo;</p>
+          <p class="fragment" data-fragment-index="10">On error use &ldquo;<code>make images JOBS=1</code>&rdquo; and take a look at &ldquo;<code>build.log</code>&rdquo;</p>
+
+        </section>
 
 <!--
 simonis@simonis:/share/output-jdk9-dev-dbg$ ./images/jdk/bin/java -version
@@ -395,12 +584,10 @@ simonis@simonis:/share/OpenJDK/jdk9-dev$ bash configure
 
 build/linux-x86_64-normal-server-release/
 
------ Build times -------
 Start 2017-09-28 16:22:21
 End   2017-09-28 16:22:23
 
 00:00:02 TOTAL
--------------------------
 -->
 
 <!--
@@ -418,7 +605,6 @@ openjdk version "1.9.0-internal-debug"
 OpenJDK Runtime Environment (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b00)
 OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b00, mixed mode)
 -->
-        </section>
 
         <section>
           <h2>OpenJDK Tools - <a href="http://openjdk.java.net/jtreg/"><code style="text-transform: none;"><b>JTreg</b></code></a></h2>
@@ -461,17 +647,15 @@ OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b0
               <a href="http://hg.openjdk.java.net/code-tools/webrev/raw-file/tip/webrev.ksh">http://hg.openjdk.java.net/code-tools/webrev</a></li>
             <div>
               <pre class="big noshadow" data-trim="true">
-                <code style="color: #ffffff; background-color: #000000;" class="nohighlight" data-trim="true">
-<![CDATA[
-> cd jdk
-> ksh webrev.ksh -o /tmp -O -c 8081674 -i 8081674.html
-> unzip -l /tmp/webrev.zip
+                <code class="terminal" data-trim="true" data-noescape="true" style="">
+$ cd jdk
+$ ksh webrev.ksh -o /tmp -O -c 8081674 -i 8081674.html
+$ unzip -l /tmp/webrev.zip
 ...
      5643  2015-09-25 17:36   webrev/raw_files/old/src/.../jni_util.c
      8643  2015-09-25 17:36   webrev/index.html
 ---------                     -------
    320695                     75 files
-]]>
                 </code>
               </pre>
             </div>
@@ -558,13 +742,20 @@ OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b0
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        //width: 1024,
+        //height: 768,
+        //width: 1280,
+        //height: 720,
         width: 1366,
         height: 768,
-        // margin: 0.1, // Old setting which was used in the reveal.js version used for the JET2015 presentation
+        //width: 1920,
+        //height: 1080,
+        //margin: 0.1, // Old setting which was used in the reveal.js version used for the JET2015 presentation
         controls: true,
         progress: true,
         history: true,
         center: true,
+        slideNumber: true,
 
         transition: 'none', // none/fade/slide/convex/concave/zoom
 
@@ -573,12 +764,33 @@ OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b0
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() {
+
+hljs.registerLanguage('terminal', function(hljs) {
+  return {
+    contains: [
+      hljs.C_LINE_COMMENT_MODE,
+      {
+        className: 'title',
+        lexemes: /[$()>_a-zA-Z0-9]+/,
+        keywords: "$ (gdb) hsdb>",
+        begin: /^\$ |\(gdb\)|hsdb> /,
+        end: /[^\\]\n/,
+	contains: [
+          hljs.COMMENT('//', '$', { endsParent: true })
+	]
+      }
+    ]
+  }
+});
+
+hljs.initHighlightingOnLoad(); } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
 
+      //Reveal.configure({ slideNumber: true });
     </script>
 
   </body>
