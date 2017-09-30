@@ -332,8 +332,19 @@ mark.border-no-bottom {
         </section>
 
         <section>
+          <h2>OpenJDK Genealogy</h2>
+
+- OpenJDK genealogy
+  - JDK 6 - JDK 10
+  - OpenJDK artifacts / distros
+  - OpenJDK vs. OracleJDK vs. IcedTea vs. Azul Zulu vs. Open J9 vs. IBM JDK vs. SAP JVM vs. ...
+  - Adopt OpenJDK
+
+        </section>
+
+        <section>
           <h2>
-            The <a href="http://www.oracle.com/technetwork/oca-405177.pdf">Oracle Contribution Agreement</a> (<b>OCA</b>)
+            <a href="http://www.oracle.com/technetwork/oca-405177.pdf"><b>OCA</b> - the Oracle Contribution Agreement</a>
           </h2>
 
           <ul>
@@ -475,6 +486,34 @@ mark.border-no-bottom {
               </ul>
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Reporting a Bug</h2>
+
+          <ul>
+            <li>Try to reproduce the bug with the latest builds (<a href="http://jdk8.java.net">http://jdk8.java.net</a>,
+              <a href="http://jdk9.java.net">http://jdk9.java.net</a>)</li>
+            <li>Try with a debug build (you'll have to build it!) - this may give you more insights</li>
+            <li>Try to write a simple test case (if possible a <code>JTreg</code> test)</li>
+            <li>Search for similar bugs in the bug database <a href="https://bugs.openjdk.java.net">https://bugs.openjdk.java.net</a>
+              <ul>
+                <li>Not all bugs are visible (security bugs, customer bugs, ..)</li>
+              </ul>
+            </li>
+            <li>Non-Authors can only submit through <a href="http://bugs.java.com/">http://bugs.java.com/</a>
+              <ul>
+                <li>Creates only a temporary bug IDs - 'real' bug IDs issued after triaging</li>
+              </ul>
+            </li>
+            <li>Write directly to the corresponding mailing list:
+              <ul>
+                <li>For simply reproduceable bugs</li>
+                <li>If you have a <code>hs_err</code> file</li>
+              </ul>
+            </li>
+          </ul>
+
         </section>
 
         <section>
@@ -628,7 +667,9 @@ OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b0
             <li>Can execute <a href="http://junit.org/">JUnit</a> and <a href="http://testng.org">TestNG</a> tests</li>
             <li>See <a href="http://download.java.net/openjdk/testresults/9">JDK 9 Early Access Build Test Results</a> and<br/>
               <a href="http://download.java.net/openjdk/testresults/8">JDK 8 Update Releases Early Access Build Test Results</a></li>
-            <li>Binaries are available from the <a href="https://java.net/projects/adoptopenjdk/pages/InstallJtreg">AdoptOpenJDK project</a></li>
+            <li>Binaries
+            (<a href="https://adopt-openjdk.ci.cloudbees.com/job/jtreg/lastSuccessfulBuild/artifact/"><code>jtreg</code></a>/<a href="https://adopt-openjdk.ci.cloudbees.com/job/jtreg/lastSuccessfulBuild/artifact/"><code>jtharness</code></a>)
+             are available from the <a href="https://wiki.openjdk.java.net/display/Adoption">Adoption Group</a></li>
           </ul>
 
         </section>
@@ -663,49 +704,38 @@ $ unzip -l /tmp/webrev.zip
         </section>
 
         <section>
-          <h2>Finding a Bug</h2>
-
-          <ul>
-            <li>Search for the bug in the bug database <a href="https://bugs.openjdk.java.net">https://bugs.openjdk.java.net</a>
-              <ul>
-                <li>Not all bugs are visible (security bugs, customer bugs, ..)</li>
-              </ul>
-            </li>
-            <li>Try to reproduce the bug with the latest build (<a href="http://jdk8.java.net">http://jdk8.java.net</a>,
-              <a href="http://jdk9.java.net">http://jdk9.java.net</a>)</li>
-            <li>Try with a debug build (you'll have to build it!) - this may give you more insights</li>
-            <li>Try to write a simple reproducer (if possible a <code>JTreg</code> test)</li>
-          </ul>
-
-        </section>
-
-        <section>
           <h2><a href="http://openjdk.java.net/contribute/">Fixing a Bug</a></h2>
 
           <ul>
+            <li>Look for bugs labeled as <a href="https://bugs.openjdk.java.net/issues/?jql=project%20%3D%20JDK%20AND%20issuetype%20in%20(Bug%2C%20Enhancement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Open%2C%20New)%20AND%20labels%20in%20(starter%2C%20community_needed%2C%20community-candidate%2C%20community-contributed)%20AND%20assignee%20in%20(EMPTY)"><code>starter</code>/<code>community-candidate</code></a> in <a href="https://bugs.openjdk.java.net">JBS</a>.
+            </li>
             <li>Bugs must be fixed in a development code line first!</li>
             <li>Fix the bug in the repository of the team that's responsible for the code
               <ul>
-                <li><a href="http://hg.openjdk.java.net/jdk9/client/jdk/file/tip">http://hg.openjdk.java.net/jdk9/client/jdk</a> for AWT/Swing problems or <br/>
-                  <a href="http://hg.openjdk.java.net/jdk9/hs-comp/hotspot/file/tip">http://hg.openjdk.java.net/jdk9/hs-comp/hotspot</a> for a JIT bug, etc...
+                <li><a href="http://hg.openjdk.java.net/jdk10/client/file/tip">http://hg.openjdk.java.net/jdk10/client</a> for AWT/Swing problems or <br/>
+                  <a href="http://hg.openjdk.java.net/jdk10/hs/file/tip">http://hg.openjdk.java.net/jdk10/hs</a> for a JIT bug <br/>
+                  <a href="http://hg.openjdk.java.net/jdk10/master/file/tip">http://hg.openjdk.java.net/jdk10/master</a> for everything else.
                 </li>
               </ul>
             </li>
             <li>Consider all the platforms the OpenJDK may run on</li>
-            <li>Create a <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/8132374">Webrev</a> of your fix and upload it to your web-space</li>
-            <li>Submit your fix to the appropriate mailing list:
-              <br/><a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34630">
-              RFR(XS): 8132374: AIX: fix value of os.version property</a> (Author request)<br/>
-              <a href="http://mail.openjdk.java.net/pipermail/jdk9-dev/2015-September/thread.html#2663">[patch] JDK-4906983</a> (Contributor request)</li>
+            <li>Submit your patch / <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/8132374">Webrev</a> to the appropriate mailing list:
+              <ul>
+                <li><a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34630">
+                    RFR(XS): 8132374: AIX: fix value of os.version property</a> (Author request)</li>
+                <li><a href="http://mail.openjdk.java.net/pipermail/jdk9-dev/2015-September/thread.html#2663">[patch] JDK-4906983</a> (Contributor request)</li>
+              </ul>
+            </li>
             <li>Be ready to discuss, defend and <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/">improve</a> your fix
               <a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34589">several</a>
               <a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-August/thread.html#34835">rounds</a></li>
+            <li>Find a sponsor</li>
           </ul>
 
         </section>
 
         <section>
-          <h2><a href="http://openjdk.java.net/jeps/0">The Java Enhancement Process (<b>JEP</b>)</a></h2>
+          <h2><a href="http://openjdk.java.net/jeps/0"><b>JEP</b> - The JDK Enhancement-Proposal &amp; Roadmap Process</a></h2>
 
           <ul>
             <li>Collect, review, sort, and record proposals for enhancements to the JDK</li>
@@ -724,6 +754,48 @@ $ unzip -l /tmp/webrev.zip
             </li>
             <li>Still attractive for &ldquo;implementation enhancements&rdquo; (i.e. new Ports, GCs, JITs, ..)</li>
           </ul>
+        </section>
+
+        <section>
+          <h2><a href="https://www.jcp.org"><b>JCP</b> - The Java Community Process</a></h2>
+
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Start your own JEP</h2>
+
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Start your own OpenJDK Project</h2>
+
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>The future of the OpenJDK</h2>
+
+          <ul>
+            <li>Release cadance</li>
+            <li>New projects</li>
+          </ul>
+        </section>
+
+        <section>
+
+          <h3 style="text-transform: none;"><a href="https://simonis.github.io/OpenJDKInsAndOuts">https://simonis.github.io/OpenJDKInsAndOuts</a></h3>
+
         </section>
 
         <section data-background="images/Flammarion.jpg"
