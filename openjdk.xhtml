@@ -350,7 +350,7 @@ mark.border-no-bottom {
                 <li>Base of the OpenJDK packages in most Linux distros</li>
               </ul>
             </li>
-            <li>Today there's a wild zoo of differnt OpenJDK builds and distributions:
+            <li>Today there's a wild zoo of different OpenJDK builds and distributions:
               <ul>
                 <li>Linux distros (IcedTea based?), <a href="https://adoptopenjdk.net">AdoptOpenJDK</a>, <a href="https://www.azul.com/downloads/zulu">Azul Zulu</a>, Docker, Amazon, ..</li>
               </ul>
@@ -438,7 +438,7 @@ mark.border-no-bottom {
         </section>
 
         <section>
-          <h2>OpenJDK Organisation</h2>
+          <h2>OpenJDK Organization</h2>
 
           <ul>
             <li><a href="http://openjdk.java.net/bylaws#participant"><b>Participants</b></a>: 
@@ -533,7 +533,7 @@ mark.border-no-bottom {
             </li>
             <li>Write directly to the corresponding mailing list:
               <ul>
-                <li>For simply reproduceable bugs</li>
+                <li>For simply reproducible bugs</li>
                 <li>If you have a <code>hs_err</code> file</li>
               </ul>
             </li>
@@ -601,11 +601,11 @@ $ sh get_source.sh
 
           <ul>
             <li>Use a <a href="https://wiki.openjdk.java.net/display/Build/Supported+Build+Platforms">Supported Build Platform</a></li>
-            <li>Favour Linux over MacOS X and Windows</li>
+            <li>Favor Linux over MacOS X and Windows</li>
             <li>Don't build jdk7 any more :) - since jdk8 the build is <code>configure</code>-based</li>
             <li>jdk8 build instructions are in <a href="http://hg.openjdk.java.net/jdk8/jdk8/raw-file/tip/README-builds.html">README-builds.html</a></li>
             <li>jdk9 build instructions are in <a href="http://hg.openjdk.java.net/jdk9/jdk9/raw-file/tip/common/doc/building.html">common/doc/building.html</a></li>
-            <li>Have a look at the <a href="https://adoptopenjdk.net"> AdoptOpenJDK projekt</a></li>
+            <li>Have a look at the <a href="https://adoptopenjdk.net"> AdoptOpenJDK project</a></li>
             <li>Use your favorite search engine extensively :)</li>
             <li>Ask on <a href="mailto:build-dev@openjdk.java.net">build-dev@openjdk.java.net</a></li>
           </ul>
@@ -786,7 +786,11 @@ $ unzip -l /tmp/webrev.zip
 
           <ul>
             <li>A formalized mechanism for developing Java specifications</li>
-            <li><b>Not</b> an independant standards organization / legal entity - dominated by Oracle</li>
+            <li><b>Not</b> an independent standards organization / legal entity
+              <ul>
+                <li>A vendor consortium dominated by Oracle</li>
+                </ul>
+            </li>
             <li>Membership requires fee for organizations/companies but is free for individuals</li>
             <li><a href="https://www.jcp.org/en/jsr/overview"><b>JSR</b></a>'s (Java Specification Requests) for proposing and specifying new technologies:
               <ul>
@@ -798,7 +802,7 @@ $ unzip -l /tmp/webrev.zip
               <a href="https://www.jcp.org/en/jsr/platform?listBy=1&amp;listByType=platform">Java ME</a>,
               <a href="https://www.jcp.org/en/jsr/platform?listBy=2&amp;listByType=platform">Java SE</a> and
               <a href="https://www.jcp.org/en/jsr/platform?listBy=3&amp;listByType=platform">Java EE</a></li>
-            <li>JCP is being critisized as beeing a "rubber stamp organization", but see:
+            <li>JCP is being criticized as being a "rubber stamp organization", but see:
               <ul>
                 <li><a href="https://en.wikipedia.org/wiki/Apache_Harmony#Difficulties_to_obtain_a_TCK_license_from_Sun">Apache vs. Sun on getting access to the TCK</a></li>
                 <li><a href="https://www.jcp.org/en/jsr/results?id=5959">JCP EC rejects JSR 376 (Jigsaw)</a></li>
@@ -808,20 +812,35 @@ $ unzip -l /tmp/webrev.zip
         </section>
 
         <section>
-          <h2>Start your own JEP</h2>
-
+          <h2><a href="http://openjdk.java.net/jeps/1">Start your own JEP</a></h2>
+          
+          <p>
           <ul>
-            <li></li>
-            <li></li>
+            <li>It requires two or more weeks of engineering effort</li>
+            <li>It makes a significant change to the JDK</li>
+            <li>It is in high demand by developers or customers</li>
+            <p>
+          A pretty good example and blueprint is Azul's <a href="http://openjdk.java.net/jeps/285">JEP 285: Spin-Wait Hints</a>:
+          </p>
+            <li>Proposed on hotspot-dev / core-libs-dev on 10/4/2015</li>
+            <li>Discussed until 2/24/2016</li>
+            <li>Moved to candidate state at 3/4/2016</li>
+            <li>Proposed to target for JDK 9 3/10/2016</li>
+            <li>RFR run from 1/26/2016 until 4/1/2016</li>
           </ul>
+          </p>
         </section>
 
         <section>
-          <h2>Start your own OpenJDK Project</h2>
+          <h2><a href="http://openjdk.java.net/projects/#new-project">Start your own OpenJDK Project</a></h2>
 
           <ul>
-            <li></li>
-            <li></li>
+            <li>Any Contributor may propose the creation of a new Project</li>
+            <li>At least one Group Lead must sponsor the proposed Project!!!</li>
+            <li>Step 0 (Discuss): <code>"Call for Discussion: &lt;project name&gt;"</code> to discuss list</li>
+            <li>Step 1 (Propose): <code>"CFV: New Project: &lt;project name&gt;"</code> to announce list</li>
+            <li>Step 2 (Vote): <code>"Re: CFV: New Project: &lt;project name&gt;"</code> to discuss list</li>
+            <li>Step 3 (Results): Announce results to announce list</li>
           </ul>
         </section>
 
@@ -829,8 +848,9 @@ $ unzip -l /tmp/webrev.zip
           <h2>The future of the OpenJDK</h2>
 
           <ul>
-            <li>Release cadance</li>
-            <li>New projects</li>
+            <li>New six month, release cadence</li>
+            <li>Many new projects: Panama, Valhalla, Graal, Loom, Metropolis</li>
+            <li>Competition: Open J9</li>
           </ul>
         </section>
 
@@ -909,3 +929,26 @@ hljs.initHighlightingOnLoad(); } },
 
   </body>
 </html>
+
+<!--  LocalWords:  OpenJDK scrollable px pre hljs noshadow li img fff
+ -->
+<!--  LocalWords:  bd hirarchy monospace arial helvetica ffffff td os
+ -->
+<!--  LocalWords:  functionCall darkblue javaCall darkgreen ffa GPLv
+ -->
+<!--  LocalWords:  rowspan Volker Simonis Classpath implementers Azul
+ -->
+<!--  LocalWords:  RedHat InvokeDynamic Nashorn Graal Shanandoa JDK
+ -->
+<!--  LocalWords:  IcedTea distros AdoptOpenJDK JVM OCA OSI TCK OCTLA
+ -->
+<!--  LocalWords:  Duimovich SUNY Oswego Committers jdk Webrev corba
+ -->
+<!--  LocalWords:  hotspot jaxp jaxws langtools nashorn JEP repo html
+ -->
+<!--  LocalWords:  parallelized MacOS README JCK JUnit TestNG webrev
+ -->
+<!--  LocalWords:  Korn JBS AWT JIT RFR AIX Roadmap JCP JSR JEPs GCs
+ -->
+<!--  LocalWords:  JITs EE dev libs
+ -->
