@@ -1,0 +1,149 @@
+#Test Results (version 2)
+#Sat Jan 20 20:04:25 CET 2018
+#-----testdescription-----
+$file=/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.java
+$root=/share/OpenJDK/jdk-hs/test/jdk
+author=Valerie Peng
+keywords=bug8014374
+run=ASSUMED_ACTION main TestGCMKeyAndIvCheck\n
+source=TestGCMKeyAndIvCheck.java
+title=Ensure that same key+iv can't be repeatedly used for encryption.
+
+#-----environment-----
+
+#-----testresult-----
+description=file\:/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.java
+elapsed=330 0\:00\:00.330
+end=Sat Jan 20 20\:04\:25 CET 2018
+environment=regtest
+execStatus=Passed. Execution successful
+harnessLoaderMode=Classpath Loader
+harnessVariety=Full Bundle
+hostname=simonis
+javatestOS=Linux 4.2.0-42-generic (amd64)
+javatestVersion=5.0
+jtregVersion=jtreg 4.2 dev b11
+script=com.sun.javatest.regtest.exec.RegressionScript
+sections=script_messages build compile main
+start=Sat Jan 20 20\:04\:25 CET 2018
+test=com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.java
+testJDK=/share/output-jdk-hs-opt/images/jdk
+totalTime=331
+user.name=simonis
+work=/tmp/JTwork/com/oracle/security/ucrypto
+
+#section:script_messages
+----------messages:(4/244)----------
+JDK under test: /share/output-jdk-hs-opt/images/jdk
+openjdk version "10-internal" 2018-03-20
+OpenJDK Runtime Environment (build 10-internal+0-adhoc.simonis.jdk-hs)
+OpenJDK 64-Bit Server VM (build 10-internal+0-adhoc.simonis.jdk-hs, mixed mode)
+
+#section:build
+----------messages:(5/153)----------
+command: build TestGCMKeyAndIvCheck
+reason: Named class compiled on demand
+Test directory:
+  compile: TestGCMKeyAndIvCheck
+elapsed time (seconds): 0.274
+result: Passed. Build successful
+
+#section:compile
+----------messages:(5/208)----------
+command: compile /share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.java
+reason: .class file out of date or does not exist
+Mode: agentvm
+Agent id: 0
+elapsed time (seconds): 0.273
+----------configuration:(10/502)----------
+Boot Layer (javac runtime environment)
+  class path: /share/OpenJDK/jtreg/build/images/jtreg/lib/javatest.jar 
+              /share/OpenJDK/jtreg/build/images/jtreg/lib/jtreg.jar 
+  patch:      java.base /tmp/JTwork/patches/java.base
+
+javac compilation environment
+  source path: /share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto
+  class path:  /share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto
+               /tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d
+
+----------rerun:(25/1641)*----------
+cd /tmp/JTwork/scratch/0 && \\
+DISPLAY=:0.0 \\
+HOME=/home/simonis \\
+LANG=en_US.UTF-8 \\
+PATH=/bin:/usr/bin \\
+XMODIFIERS=@im=none \\
+    /share/output-jdk-hs-opt/images/jdk/bin/javac \\
+        -J-Xmx512m \\
+        -J-Djava.library.path=/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native \\
+        -J-Dtest.class.path.prefix=/tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d:/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto \\
+        -J-Dtest.src=/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto \\
+        -J-Dtest.src.path=/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto \\
+        -J-Dtest.classes=/tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d \\
+        -J-Dtest.class.path=/tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d \\
+        -J-Dtest.vm.opts=-Xmx512m \\
+        -J-Dtest.tool.vm.opts=-J-Xmx512m \\
+        -J-Dtest.compiler.opts= \\
+        -J-Dtest.java.opts= \\
+        -J-Dtest.jdk=/share/output-jdk-hs-opt/images/jdk \\
+        -J-Dcompile.jdk=/share/output-jdk-hs-opt/images/jdk \\
+        -J-Dtest.timeout.factor=5.0 \\
+        -J-Dtest.nativepath=/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native \\
+        -d /tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d \\
+        -sourcepath /share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto \\
+        -classpath /share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto:/tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d /share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.java
+----------direct:(2/170)----------
+Note: /share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto/UcryptoTest.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+result: Passed. Compilation successful
+
+#section:main
+----------messages:(5/165)----------
+command: main TestGCMKeyAndIvCheck
+reason: Assumed action based on file name: run main TestGCMKeyAndIvCheck 
+Mode: agentvm
+Agent id: 2
+elapsed time (seconds): 0.055
+----------configuration:(9/379)----------
+Boot Layer
+  class path: /share/OpenJDK/jtreg/build/images/jtreg/lib/javatest.jar 
+              /share/OpenJDK/jtreg/build/images/jtreg/lib/jtreg.jar 
+  patch:      java.base /tmp/JTwork/patches/java.base
+
+Test Layer
+  class path: /tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d
+              /share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto
+
+----------rerun:(22/1394)*----------
+cd /tmp/JTwork/scratch/0 && \\
+DISPLAY=:0.0 \\
+HOME=/home/simonis \\
+LANG=en_US.UTF-8 \\
+PATH=/bin:/usr/bin \\
+XMODIFIERS=@im=none \\
+    /share/output-jdk-hs-opt/images/jdk/bin/java \\
+        -Dtest.class.path.prefix=/tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d:/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto \\
+        -Dtest.src=/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto \\
+        -Dtest.src.path=/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto \\
+        -Dtest.classes=/tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d \\
+        -Dtest.class.path=/tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d \\
+        -Dtest.vm.opts=-Xmx512m \\
+        -Dtest.tool.vm.opts=-J-Xmx512m \\
+        -Dtest.compiler.opts= \\
+        -Dtest.java.opts= \\
+        -Dtest.jdk=/share/output-jdk-hs-opt/images/jdk \\
+        -Dcompile.jdk=/share/output-jdk-hs-opt/images/jdk \\
+        -Dtest.timeout.factor=5.0 \\
+        -Dtest.nativepath=/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native \\
+        -classpath /tmp/JTwork/classes/0/com/oracle/security/ucrypto/TestGCMKeyAndIvCheck.d:/share/OpenJDK/jdk-hs/test/jdk/com/oracle/security/ucrypto:/share/OpenJDK/jtreg/build/images/jtreg/lib/javatest.jar:/share/OpenJDK/jtreg/build/images/jtreg/lib/jtreg.jar \\
+        TestGCMKeyAndIvCheck
+----------System.out:(1/47)----------
+No OracleUcrypto provider found, skipping test
+----------System.err:(3/36)----------
+
+JavaTest Message:  Test complete.
+
+result: Passed. Execution successful
+
+
+test result: Passed. Execution successful

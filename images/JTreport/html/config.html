@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head><title>jtreg Configuration Editor</title></head>
+<body><h1>jtreg Configuration Editor</h1>
+<ul>
+<li><a href="#regtest.prolog">Welcome!</a>
+<li><a href="#regtest.tests.needTests">Specify Tests to Run?</a>
+<li><a href="#regtest.tests.treeOrFile">How to Specify Tests</a>
+<li><a href="#regtest.tests.tests">Tests to Run</a>
+<li><a href="#regtest.excludeList.needExcludeList">Specify an Exclude List?</a>
+<li><a href="#regtest.excludeList.customFiles">Specify Exclude List Files</a>
+<li><a href="#regtest.knownFailuresList.needKfl">Specify a Known Failures List?</a>
+<li><a href="#regtest.keywords.needKeywords">Specify Keywords?</a>
+<li><a href="#regtest.keywords.keywords">Keywords</a>
+<li><a href="#regtest.priorStatus.needStatus">Specify Status?</a>
+<li><a href="#regtest.concurrency.concurrency">Concurrency</a>
+<li><a href="#regtest.timeout.timeout">Time Factor</a>
+<li><a href="#regtest.epilog">Congratulations!</a>
+</ul>
+
+<hr><a name="regtest.prolog"></a>
+<h3>Welcome!</h3>
+<p>Welcome to the Configuration Editor for /share/OpenJDK/jdk-hs/test/jdk!<br><br>The following questions ask you about how to run the test suite.  You can also enter and edit some of this information using the Standard Values view of this editor.<br><br> The panel to the right contains information that should help you answer the interview questions.</p>
+<p><hr align=left width="25%"><a name="regtest.tests.needTests"></a>
+<h3>Specify Tests to Run?</h3>
+<p>Do you wish to run only selected sections of the test suite?</p>
+<p><i>Response: <b>Yes</b> ("Yes")</i></p>
+
+<p><hr align=left width="25%"><a name="regtest.tests.treeOrFile"></a>
+<h3>How to Specify Tests</h3>
+<p>Do you wish to specify the tests to be run directly, or do you wish to specify them by means of a list in a file?</p>
+<p><i>Response: <b>tree</b> ("Directly")</i></p>
+
+<p><hr align=left width="25%"><a name="regtest.tests.tests"></a>
+<h3>Tests to Run</h3>
+<p>Specify the sections of the test suite you wish to run.</p>
+<p><i>Response: </i></p><ul><li><b><i>java/lang/Math</i></b><li><b><i>java/lang/Byte</i></b><li><b><i>java/util/PriorityQueue</i></b><li><b><i>java/util/StringTokenizer</i></b><li><b><i>javax/security/auth/spi</i></b><li><b><i>com/sun/corba</i></b><li><b><i>java/util/Calendar</i></b><li><b><i>java/util/AbstractList</i></b><li><b><i>sun/security/jgss</i></b><li><b><i>java/lang/management</i></b><li><b><i>java/util/IdentityHashMap</i></b><li><b><i>sun/tools/jps</i></b><li><b><i>sun/security/x509</i></b><li><b><i>java/lang/String</i></b><li><b><i>java/lang/Integer</i></b><li><b><i>java/util/Currency</i></b><li><b><i>jdk/internal/misc</i></b><li><b><i>java/lang/Enum</i></b><li><b><i>java/util/List</i></b><li><b><i>com/sun/jndi</i></b><li><b><i>jdk/modules</i></b><li><b><i>java/util/Iterator</i></b><li><b><i>java/util/Hashtable</i></b><li><b><i>com/sun/tools/attach</i></b><li><b><i>java/lang/ThreadGroup</i></b><li><b><i>java/util/AbstractMap</i></b><li><b><i>javax/security/auth/login</i></b><li><b><i>jdk/internal/math</i></b><li><b><i>jdk/internal/jrtfs</i></b><li><b><i>java/util/ServiceLoader</i></b><li><b><i>java/lang/Appendable</i></b><li><b><i>sun/security/smartcardio</i></b><li><b><i>java/lang/module</i></b><li><b><i>java/util/Base64</i></b><li><b><i>java/util/Optional</i></b><li><b><i>java/util/Formatter</i></b><li><b><i>java/lang/Character</i></b><li><b><i>java/util/ResourceBundle</i></b><li><b><i>java/lang/instrument</i></b><li><b><i>com/sun/jmx</i></b><li><b><i>java/util/TreeMap</i></b><li><b><i>javax/xml/soap</i></b><li><b><i>java/lang/RuntimePermission</i></b><li><b><i>sun/security/tools</i></b><li><b><i>sun/security/util</i></b><li><b><i>java/util/Vector</i></b><li><b><i>java/nio</i></b><li><b><i>jdk/nio</i></b><li><b><i>javax/security/auth/kerberos</i></b><li><b><i>java/util/Deque</i></b><li><b><i>java/lang/Throwable</i></b><li><b><i>com/sun/security/sasl</i></b><li><b><i>java/lang/HashCode.java</i></b><li><b><i>java/util/Spliterator</i></b><li><b><i>javax/xml/ws</i></b><li><b><i>com/sun/net/httpserver</i></b><li><b><i>java/lang/System</i></b><li><b><i>java/lang/Float</i></b><li><b><i>java/util/Collections</i></b><li><b><i>sun/security/rsa</i></b><li><b><i>sun/tools/jstack</i></b><li><b><i>lib/security</i></b><li><b><i>sun/tools/jcmd</i></b><li><b><i>jdk/internal/agent</i></b><li><b><i>com/sun/org/apache/xml/internal/security</i></b><li><b><i>java/util/Properties</i></b><li><b><i>java/util/LinkedList</i></b><li><b><i>java/util/function</i></b><li><b><i>java/util/Collection</i></b><li><b><i>java/util/concurrent</i></b><li><b><i>com/sun/management</i></b><li><b><i>javax/imageio</i></b><li><b><i>java/util/AbstractCollection</i></b><li><b><i>java/lang/SecurityManager</i></b><li><b><i>sun/security/jca</i></b><li><b><i>javax/transaction</i></b><li><b><i>java/lang/ModuleLayer</i></b><li><b><i>java/util/zip</i></b><li><b><i>sun/tools/jstatd</i></b><li><b><i>java/lang/ProcessBuilder</i></b><li><b><i>jdk/internal/jline</i></b><li><b><i>sun/tools/jmap</i></b><li><b><i>sun/util</i></b><li><b><i>sun/security/krb5</i></b><li><b><i>java/util/Map</i></b><li><b><i>java/lang/ClassLoader</i></b><li><b><i>sun/security/pkcs</i></b><li><b><i>javax/accessibility</i></b><li><b><i>java/lang/StringBuffer</i></b><li><b><i>javax/sound</i></b><li><b><i>java/util/HashSet</i></b><li><b><i>jdk/net</i></b><li><b><i>sun/security/ssl</i></b><li><b><i>java/util/StringJoiner</i></b><li><b><i>java/util/EnumMap</i></b><li><b><i>sun/security/pkcs12</i></b><li><b><i>sun/security/pkcs11</i></b><li><b><i>java/util/Timer</i></b><li><b><i>java/util/LinkedHashSet</i></b><li><b><i>java/util/Random</i></b><li><b><i>org/omg/CORBA</i></b><li><b><i>javax/xml/crypto</i></b><li><b><i>com/sun/awt</i></b><li><b><i>java/util/NavigableMap</i></b><li><b><i>javax/management</i></b><li><b><i>java/lang/Double</i></b><li><b><i>java/text</i></b><li><b><i>java/lang/Compare.java</i></b><li><b><i>javax/naming</i></b><li><b><i>java/lang/ToString.java</i></b><li><b><i>jdk/internal/ref</i></b><li><b><i>java/lang/Short</i></b><li><b><i>java/util/spi</i></b><li><b><i>java/security</i></b><li><b><i>javax/xml/bind</i></b><li><b><i>java/util/Arrays</i></b><li><b><i>java/util/Date</i></b><li><b><i>java/util/prefs</i></b><li><b><i>sun/tools/jhsdb</i></b><li><b><i>java/lang/StrictMath</i></b><li><b><i>java/lang/Thread</i></b><li><b><i>javax/crypto</i></b><li><b><i>java/lang/ModuleTests</i></b><li><b><i>sun/tools/java</i></b><li><b><i>java/util/TimSort</i></b><li><b><i>java/lang/Runtime</i></b><li><b><i>java/lang/ProcessHandle</i></b><li><b><i>java/util/Observable</i></b><li><b><i>java/util/AbstractSequentialList</i></b><li><b><i>jdk/lambda</i></b><li><b><i>vm</i></b><li><b><i>com/oracle/security/ucrypto</i></b><li><b><i>com/sun/security/jgss</i></b><li><b><i>sun/tools/jinfo</i></b><li><b><i>sun/security/ec</i></b><li><b><i>tools</i></b><li><b><i>com/sun/nio/sctp</i></b><li><b><i>java/lang/reflect</i></b><li><b><i>java/lang/StringCoding</i></b><li><b><i>jdk/internal/loader</i></b><li><b><i>sun/reflect</i></b><li><b><i>java/lang/AssertionError</i></b><li><b><i>sun/jvmstat</i></b><li><b><i>sun/rmi</i></b><li><b><i>java/util/MissingFormatArgumentException</i></b><li><b><i>sun/security/provider</i></b><li><b><i>java/util/UUID</i></b><li><b><i>jdk/internal/reflect</i></b><li><b><i>java/lang/invoke</i></b><li><b><i>javax/security/auth/SubjectDomainCombiner</i></b><li><b><i>com/sun/jdi</i></b><li><b><i>java/lang/Class</i></b><li><b><i>lib/testlibrary</i></b><li><b><i>sun/text</i></b><li><b><i>java/lang/StackWalker</i></b><li><b><i>java/beans</i></b><li><b><i>java/lang/InheritableThreadLocal</i></b><li><b><i>java/util/IllegalFormatException</i></b><li><b><i>com/sun/jarsigner</i></b><li><b><i>java/util/BitSet</i></b><li><b><i>javax/xml/jaxp</i></b><li><b><i>sun/management</i></b><li><b><i>sun/security/validator</i></b><li><b><i>javax/security/sasl</i></b><li><b><i>java/util/Scanner</i></b><li><b><i>java/util/Formattable</i></b><li><b><i>java/rmi</i></b><li><b><i>sun/tools/jstat</i></b><li><b><i>javax/smartcardio</i></b><li><b><i>javax/security/auth/x500</i></b><li><b><i>javax/script</i></b><li><b><i>java/util/Locale</i></b><li><b><i>java/util/jar</i></b><li><b><i>com/sun/java/swing</i></b><li><b><i>java/lang/Long</i></b><li><b><i>sun/misc</i></b><li><b><i>java/lang/annotation</i></b><li><b><i>java/lang/StringBuilder</i></b><li><b><i>java/util/PropertyPermission</i></b><li><b><i>com/sun/crypto</i></b><li><b><i>java/lang/PrimitiveSumMinMaxTest.java</i></b><li><b><i>javax/security/auth/PrivateCredentialPermission</i></b><li><b><i>java/util/Comparator</i></b><li><b><i>javax/rmi</i></b><li><b><i>java/util/regex</i></b><li><b><i>java/util/Objects</i></b><li><b><i>java/util/ArrayList</i></b><li><b><i>javax/security/auth/Subject</i></b><li><b><i>sun/security/action</i></b><li><b><i>java/lang/ref</i></b><li><b><i>sun/net</i></b><li><b><i>sun/tools/jrunscript</i></b><li><b><i>java/lang/StackTraceElement</i></b><li><b><i>java/lang/WeakPairMap</i></b><li><b><i>javax/net</i></b><li><b><i>java/util/logging</i></b><li><b><i>sun/security/mscapi</i></b><li><b><i>java/util/LinkedHashMap</i></b><li><b><i>java/lang/Boolean</i></b><li><b><i>sun/nio</i></b><li><b><i>sun/tools/jconsole</i></b><li><b><i>java/util/PluggableLocale</i></b><li><b><i>jdk/security</i></b><li><b><i>javax/security/auth/Destroyable</i></b><li><b><i>java/sql</i></b><li><b><i>java/math</i></b><li><b><i>sun/invoke</i></b><li><b><i>java/util/HashMap</i></b><li><b><i>java/io</i></b><li><b><i>java/time</i></b><li><b><i>java/util/EnumSet</i></b><li><b><i>java/lang/Package</i></b><li><b><i>com/sun/net/ssl</i></b><li><b><i>java/util/WeakHashMap</i></b><li><b><i>java/net</i></b><li><b><i>java/util/TimeZone</i></b><li><b><i>java/lang/ThreadLocal</i></b><li><b><i>java/util/stream</i></b><li><b><i>javax/sql</i></b><li><b><i>java/lang/IntegralPrimitiveToString.java</i></b><li><b><i>jdk/internal/jimage</i></b><li><b><i>com/sun/security/auth</i></b></ul>
+
+<p><hr align=left width="25%"><a name="regtest.excludeList.needExcludeList"></a>
+<h3>Specify an Exclude List?</h3>
+<p>Do you wish to specify an exclude list?</p>
+<p><i>Response: <b>Yes</b> ("Yes")</i></p>
+
+<p><hr align=left width="25%"><a name="regtest.excludeList.customFiles"></a>
+<h3>Specify Exclude List Files</h3>
+<p>Specify the files that make up the exclude list you wish to use.</p>
+<p><i>Response: </i></p><ul><li><b><i>/share/OpenJDK/jdk-hs/test/jdk/ProblemList.txt</i></b></ul>
+
+<p><hr align=left width="25%"><a name="regtest.knownFailuresList.needKfl"></a>
+<h3>Specify a Known Failures List?</h3>
+<p>Do you wish to specify a known failures list?</p>
+<p><i>Response: <b>No</b> ("No")</i></p>
+
+<p><hr align=left width="25%"><a name="regtest.keywords.needKeywords"></a>
+<h3>Specify Keywords?</h3>
+<p>Do you wish to specify a keyword expression to select/reject tests based on keywords contained in each test description?</p>
+<p><i>Response: <b>Yes</b> ("Yes")</i></p>
+
+<p><hr align=left width="25%"><a name="regtest.keywords.keywords"></a>
+<h3>Keywords</h3>
+<p>Specify a keyword expression:</p>
+<p><i>Response: <b>!manual &amp; !ignore</b></i></p>
+
+<p><hr align=left width="25%"><a name="regtest.priorStatus.needStatus"></a>
+<h3>Specify Status?</h3>
+<p>Do you wish to select tests to run based on their result in a previous run?</p>
+<p><i>Response: <b>No</b> ("No")</i></p>
+
+<p><hr align=left width="25%"><a name="regtest.concurrency.concurrency"></a>
+<h3>Concurrency</h3>
+<p>The JT Harness harness can run tests concurrently. Specify the maximum number of tests that should be run concurrently:</p>
+<p><i>Response: <b>2</b></i></p>
+
+<p><hr align=left width="25%"><a name="regtest.timeout.timeout"></a>
+<h3>Time Factor</h3>
+<p>Specify a time factor that is applied to each test's default timeout. For example, specifying "2" doubles the time for each test (the default is 1):</p>
+<p><i>Response: <b>5</b></i></p>
+
+<p><hr align=left width="25%"><a name="regtest.epilog"></a>
+<h3>Congratulations!</h3>
+<p>Congratulations!<br><br>This completes the configuration interview.<br><br>Click the "Done" button below to save your answers and dismiss the editor.<br><br>To run the test suite choose:<br><br>Run Tests &gt; Start</p>
+</body></html>

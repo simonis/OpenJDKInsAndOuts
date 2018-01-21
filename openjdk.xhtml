@@ -17,252 +17,34 @@
 
     <link rel="stylesheet" href="reveal.js/css/reveal.css" />
     <link rel="stylesheet" href="reveal.js/css/theme/joker2017.css" id="theme" />
-
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="reveal.js/lib/css/monokai_sublime.css" />
+    <!-- Local overrides -->
+    <link rel="stylesheet" href="css/local.css" />
 
-  <style type="text/css">
-.scrollable {
-    bottom: 0px;
-    overflow-y: auto  !important;
-    overflow-x: hidden !important;
-}
+    <style type="text/css">
 
-.reveal .slides > section.demo,
-.reveal .slides > section > section.demo {
-    padding: 0;
-    height: 100%;
-}
-
-.reveal .big {
-    font-size: .7em;
-    line-height: 1.3em;
-}
-
-.reveal pre.console {
-    background-color: black;
-    color: #00ff00;
-}
-
-code.terminal .hljs-title {
-    color: #00ff00;
-}
-
-.reveal pre.noshadow {
-    border-radius: 0;
-    box-shadow: unset;
-}
-
-.reveal pre code {
-    max-height: 100%;
-}
-.reveal p>code, .reveal li>code, .reveal a>code {
-    font-size-adjust: .45;
-}
-
-.reveal section img {
-    margin: 0;
-    background: none;
-    border: none;
-    box-shadow: none;
-}
-
-.reveal .outline_white {
-    color: white;
-    text-shadow:
-        -2px -2px 0 #000,
-         2px -2px 0 #000,
-        -2px  2px 0 #000,
-         2px  2px 0 #000;
-    min-height: 1.1em;
+ .reveal table.simple tr {
+    border-bottom: 2px solid;
+  }
+ .reveal table.simple th {
     text-align: center;
-}
-.reveal .outline_black {
-    color: black;
-    text-shadow:
-        -2px -2px 0 #fff,
-         2px -2px 0 #fff,
-        -2px  2px 0 #fff,
-         2px  2px 0 #fff;
-    min-height: 1.1em;
+    border-bottom: 0p;
+  }
+ .reveal  table.simple td {
+    text-align: left;
+    border-bottom: 0px;
+  }
+ .reveal  table.simple td.center {
     text-align: center;
-}
-
-.reveal .slide-number {
-    position: fixed;
-    display: block;
-    left: 15px;
-    bottom: 15px;
-    opacity: 0.9;
-    z-index: 31;
-    font-size: 14px;
-    font-family: inherit;
-    color: #268bd2;
-    background-color: inherit;
-}
-.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-    text-transform: none;
-}
-
-.hljs-class .hljs-title {
-    /* fix "public static class Y extends X {" such that 'Y' will be formatted the same like 'X' */
-    color: #A6E22E;
-    font-style: italic;
-}
-
-mark {
-    color: black;
-    background-color: yellow;
-    border-radius: 10px;
-}
-mark.orange {
-    color: black;
-    background-color: orange;
-    border-radius: 10px;
-}
-mark.border {
-    color: inherit;
-    background-color: inherit;
-    border: 5px solid #1B91FF;
-    border-radius: 10px;
-}
-mark.border-no-top {
-    color: inherit;
-    background-color: inherit;
-    border: 5px solid #1B91FF;
-    border-width: 0px 5px 5px 5px;
-    border-radius: 0px 0px 10px 10px;
-}
-mark.border-no-bottom {
-    color: inherit;
-    background-color: inherit;
-    border: 5px solid #1B91FF;
-    border-width: 5px 5px 0px 5px;
-    border-radius: 10px 10px 0px 0px;
-}
-
-.reveal .slides section .fragment.highlight-border, .reveal .slides section .fragment.highlight-current-border {
-  opacity: 1;
-  visibility: visible;
-}
-.reveal .slides section .fragment.highlight-border.visible {
-  border: 5px solid #1B91FF;
-  border-radius: 10px;
-}
-.reveal .slides section .fragment.highlight-current-border.current-fragment {
-  border: 5px solid #1B91FF;
-  border-radius: 10px;
-}
-  table.calling_hirarchy {
-/*    font-family: monospace, arial, helvetica, sans-serif; */
-/*    background-color: #ffffff; */
-    font-size: smaller;
-    border-collapse: collapse;
-    margin: 0px auto;
-    padding: 2px;
-    width: auto;
-    overflow: auto;
-    border: none;
+    border-bottom: 0px;
   }
-
-  table.calling_hirarchy tr {
-    border: none;
+/*
+ .reveal table tr :hover {
+    font-size: 200%;
   }
-
-  table.calling_hirarchy td {
-    padding: 4px;
-/*    font-family: monospace; */
-  }
-
-  td.indent_level_0 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #a0a0a0;
-  }
-  td.indent_level_1 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #a8a8a8;
-  }
-  td.indent_level_2 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #b0b0b0;
-  }
-  td.indent_level_3 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #b8b8b8;
-  }
-  td.indent_level_4 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #c0c0c0;
-  }
-  td.indent_level_5 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #c8c8c8;
-  }
-  td.indent_level_6 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #d0d0d0;
-  }
-  td.indent_level_7 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #d8d8d8;
-  }
-  td.indent_level_8 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #e0e0e0;
-  }
-  td.indent_level_9 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #e8e8e8;
-  }
-  td.indent_level_10 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #f0f0f0;
-  }
-  td.indent_level_11 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #f8f8f8;
-  }
-  td.indent_level_12 {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #ffffff;
-  }
-  td.functionCall {
-/*    font-weight: bold; */
-    color: darkblue;
-  }
-  td.javaCall {
-    font-weight: bold;
-    color: darkgreen;
-  }
-  td.comment {
-    font-style: italic;
-    color: maroon;
-  }
-  td.highlight {
-    border-style: solid;
-    border-width: 2px;
-    background-color: #a0ffa0;
-  }
-  table.calling_hirarchy td[rowspan] {
-    border-style: none;
-    border-width: 0;
-    border-left: dotted;
-    border-left-width: 2px;
-  }
-  </style>
+*/
+    </style>
 
     <!-- Printing and PDF exports -->
     <script>
@@ -282,6 +64,59 @@ mark.border-no-bottom {
       https://github.com/hakimel/reveal.js/pull/1173
     -->
   </head>
+
+
+<!--
+;; indent block of text
+;; C-u <number> C-x <TAB>
+
+
+
+;; select this code and do 'M-x eval-region'
+(defun make-fragment (p1 p2)
+  "Wraps the selection into 'fragment' <span>s and quotes '&', '<' and '>'."
+  (interactive "r")
+  (setq inputStr (buffer-substring-no-properties p1 p2))
+  (setq inputStr (replace-regexp-in-string "&" "&amp;" inputStr))
+  (setq inputStr (replace-regexp-in-string "<" "&lt;" inputStr))
+  (setq inputStr (replace-regexp-in-string ">" "&gt;" inputStr))
+  (setq resultStr (concat "<span class=\"fragment\">" (concat inputStr "</span>")))
+  (delete-region p1 p2)
+  (insert resultStr)
+)
+(defun make-fragment-simple (p1 p2)
+  "Wraps the selection into 'fragment' <span>s without any quoting."
+  (interactive "r")
+  (setq inputStr (buffer-substring-no-properties p1 p2))
+  (setq resultStr (concat "<span class=\"fragment\">" (concat inputStr "</span>")))
+  (delete-region p1 p2)
+  (insert resultStr)
+)
+(defun quote-fragment (p1 p2)
+  "Quotes '&', '<' and '>'."
+  (interactive "r")
+  (setq inputStr (buffer-substring-no-properties p1 p2))
+  (setq inputStr (replace-regexp-in-string "&" "&amp;" inputStr))
+  (setq inputStr (replace-regexp-in-string "<" "&lt;" inputStr))
+  (setq inputStr (replace-regexp-in-string ">" "&gt;" inputStr))
+  (delete-region p1 p2)
+  (insert inputStr)
+)
+
+(global-set-key (kbd "C-f") 'make-fragment)
+(global-set-key (kbd "C-S-f") 'make-fragment-simple)
+(global-set-key (kbd "C-S-q") 'quote-fragment)
+;; revert key-binding
+;; (global-set-key (kbd "C-f") 'forward-char)
+;;
+;; use 'C-h k <keystroke>' to find out what <keystroke> ia currently bound to
+
+;; (vhs) The following is required to make 'C-c C-t' insert <code> tags without
+;; newlines. 'sgml-tag-alist' is the "file-local" version of 'html-tag-alist'
+(add-to-list 'html-tag-alist '("code"))
+(add-to-list 'sgml-tag-alist '("code"))
+
+-->
 
   <body>
 
@@ -303,6 +138,100 @@ mark.border-no-bottom {
 
           <h3 style="text-transform: none;"><a href="https://simonis.github.io/JUGS2018">https://simonis.github.io/JUGS2018</a></h3>
 
+        </section>
+
+        <section>
+          <h2>How it all started..</h2>
+
+          <img class="plain" style="width:35%; display:inline;"
+               data-src="images/JavaInANutshell1.jpg" alt="Java in a Nutshell"/>
+          <img class="plain" style="width:35%; display:inline;"
+               data-src="images/JavaInANutshell3.jpg" alt="Java in a Nutshell"/>
+        </section>
+
+        <section class="demo">
+          <h2>Write once, run anywhere (and anytime)..</h2>
+
+          <a href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase11-419415.html">
+            <img class="plain" style="height:100%" data-src="images/historical.png" alt="Oracle Archive Page - http://www.oracle.com/technetwork/java/archive-139210.html"/>
+          </a>
+        </section>
+
+        <section>
+
+	  <table class="simple">
+	    <thead>
+	      <tr>
+<!---
+		<th>Version</th>
+		<th>Datum</th>
+		<th>Besonderheiten</th>
+-->
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+		<td class="center">1.0</td>
+		<td class="center">1996</td>
+		<td>First stable version</td>
+	      </tr>
+	      <tr>
+		<td class="center">1.1</td>
+		<td class="center">1997</td>
+		<td>Inner classes, Reflection, RMI, JDBC, <em>JIT (Windows/Symantec)</em> </td>
+	      </tr>
+	      <tr>
+		<td class="center">1.2</td>
+		<td class="center">1998</td>
+		<td>Swing, Collection framework, <code>strictfp</code>, Corba, <em>JIT (Sun/commercial)</em></td>
+	      </tr>
+	      <tr>
+		<td class="center">1.3</td>
+		<td class="center">2000</td>
+		<td>JPDA, JNDI, Java Sound, <em>HotSpot VM</em></td>
+	      </tr>
+	      <tr>
+		<td class="center">1.4</td>
+		<td class="center">2002</td>
+		<td><code>assert</code>, regexp API, NIO, JAXP, JCE, WebStart, Logging API</td>
+	      </tr>
+	      <tr>
+		<td class="center">5.0</td>
+		<td class="center">2004</td>
+		<td>Generics, Annotations, Enumerations, Varargs, Java Memory Model, JVMTI</td>
+	      </tr>
+	      <tr>
+		<td class="center">6</td>
+		<td class="center">2006</td>
+		<td>Scripting API, Compiler API, SwingWorker, JAXB, JAX-WS, JDBC 4.0, <em>G1</em></td>
+	      </tr>
+	      <tr>
+		<td class="center"></td>
+		<td class="center">2006</td>
+		<td class="center"><mark>OpenJDK</mark></td>
+	      </tr>
+	      <tr>
+		<td class="center">7</td>
+		<td class="center">2011</td>
+		<td>invokedynamic, Dimond-operator, try-with-resources, NIO2, EC crypt.</td>
+	      </tr>
+	      <tr>
+		<td class="center">8</td>
+		<td class="center">2014</td>
+		<td>Lambda expressions, Stream API, Type annotations, Date and Time API</td>
+	      </tr>
+	      <tr>
+		<td class="center">9</td>
+		<td class="center">2017</td>
+		<td>Modules, <em>AOT</em>, <em>jlink</em></td>
+	      </tr>
+	      <tr>
+		<td class="center">10</td>
+		<td class="center">2018</td>
+		<td>Local variable type inference</td>
+	      </tr>
+	    </tbody>
+	  </table>
         </section>
 
         <section>
@@ -596,8 +525,8 @@ $ sh get_source.sh
                 <div>
                   <pre class="big noshadow" data-trim="true">
                     <code class="terminal" data-trim="true" data-noescape="true">
-$ hg clone http:/&#8203;/hg.openjdk.java.net/jdk/jdk jdk-dev
-$ cd jdk-dev
+$ hg clone http:/&#8203;/hg.openjdk.java.net/jdk/jdk jdk
+$ cd jdk
                     </code>
                   </pre>
                 </div>
@@ -605,35 +534,37 @@ $ cd jdk-dev
         </section>
 
         <section>
-          <h2>Building the OpenJDK</h2>
 
-          <ul>
-            <li>Use a <a href="https://wiki.openjdk.java.net/display/Build/Supported+Build+Platforms">Supported Build Platform</a>
-              <ul>
-                <li>Configure with <code><mark class="border">--disable-warnings-as-errors</mark></code> for newer compilers!</li>
-              </ul>
-            </li>
-            <li>Favor Linux over MacOS X and Windows</li>
-            <li>Don't build jdk7 any more :) - since jdk8 the build is <code>configure</code>-based</li>
-            <li>jdk8 build instructions are in <a href="http://hg.openjdk.java.net/jdk8/jdk8/raw-file/tip/README-builds.html">README-builds.html</a></li>
-            <li>jdk9 build instructions are in <a href="http://hg.openjdk.java.net/jdk9/jdk9/raw-file/tip/common/doc/building.html">common/doc/building.html</a></li>
-            <li>Have a look at the <a href="https://adoptopenjdk.net"> AdoptOpenJDK project</a></li>
-            <li>Use your favorite search engine extensively :)</li>
-            <li>Ask on <a href="mailto:build-dev@openjdk.java.net">build-dev@openjdk.java.net</a></li>
-          </ul>
-        </section>
+          <section>
+            <h2>Building the OpenJDK</h2>
 
-        <section>
-          <h2>Building the OpenJDK</h2>
+            <ul>
+              <li>Use a <a href="https://wiki.openjdk.java.net/display/Build/Supported+Build+Platforms">Supported Build Platform</a>
+                <ul>
+                  <li>Configure with <code><mark class="border">--disable-warnings-as-errors</mark></code> for newer compilers!</li>
+                </ul>
+              </li>
+              <li>Favor Linux over MacOS X and Windows</li>
+              <li>Don't build jdk7 any more :) - since jdk8 the build is <code>configure</code>-based</li>
+              <li>jdk8 build instructions are in <a href="http://hg.openjdk.java.net/jdk8/jdk8/raw-file/tip/README-builds.html">README-builds.html</a></li>
+              <li>jdk9 build instructions are in <a href="http://hg.openjdk.java.net/jdk9/jdk9/raw-file/tip/common/doc/building.html">common/doc/building.html</a></li>
+              <li>Have a look at the <a href="https://adoptopenjdk.net"> AdoptOpenJDK project</a></li>
+              <li>Use your favorite search engine extensively :)</li>
+              <li>Ask on <a href="mailto:build-dev@openjdk.java.net">build-dev@openjdk.java.net</a></li>
+            </ul>
+          </section>
 
-          <pre class="big noshadow" style="height:100%; margin: 0;" data-trim="true">
-            <code class="terminal" data-trim="true" data-noescape="true" style="">
+          <section>
+            <h2>Building the OpenJDK</h2>
+
+            <pre class="big noshadow" style="height:100%; margin: 0;" data-trim="true">
+              <code class="terminal" data-trim="true" data-noescape="true" style="">
 $ hg clone http:/&#8203;/hg.openjdk.java.net/jdk/hs/ jdk-hs
 $<span class="fragment" data-fragment-index="1"> cd jdk-hs
 $</span><span class="fragment" data-fragment-index="2"> bash ./configure </span><span class="fragment" data-fragment-index="8"><mark class="border">--with-native-debug-symbols=external</mark> <mark class="border">--with-debug-level=slowdebug</mark></span>
 <span class="fragment" data-fragment-index="3">configure: Configuration created at Fri Sep 29 00:43:09 CEST 2017.
 ...
-$</span><span class="fragment" data-fragment-index="4"> make images </span><span class="fragment" data-fragment-index="9"><mark class="border">LOG=debug</mark></span>
+$</span><span class="fragment" data-fragment-index="4"> make images test-image</span><span class="fragment" data-fragment-index="9"><mark class="border">LOG=debug</mark></span>
 <span class="fragment" data-fragment-index="5">...
 Start 2017-09-29 00:44:29
 End   2017-09-29 01:02:08
@@ -642,10 +573,12 @@ $</span><span class="fragment" data-fragment-index="6"> ./build/linux-x86_64-nor
 <span class="fragment" data-fragment-index="7">openjdk version "10-internal"
 OpenJDK Runtime Environment (slowdebug build 10-internal+0-adhoc.simonis.jdk-hs)
 OpenJDK 64-Bit Server VM (slowdebug build 10-internal+0-adhoc.simonis.jdk-hs mixed mode)</span>
-            </code>
-          </pre>
+              </code>
+            </pre>
 
-          <p class="fragment" data-fragment-index="10">On error use &ldquo;<code>make images JOBS=1</code>&rdquo; and take a look at &ldquo;<code>build.log</code>&rdquo;</p>
+            <p class="fragment" data-fragment-index="10">On error use &ldquo;<code>make images JOBS=1</code>&rdquo; and take a look at &ldquo;<code>build.log</code>&rdquo;</p>
+
+          </section>
 
         </section>
 
@@ -683,31 +616,115 @@ OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b0
 -->
 
         <section>
-          <h2>OpenJDK Tools - <a href="http://openjdk.java.net/jtreg/"><code style="text-transform: none;"><b>JTreg</b></code></a></h2>
 
-          <ul>
-            <li><code>JTreg</code>
-              is a Regression Test Harness for the OpenJDK platform
-            </li>
-            <li>The same harness which is used to run the TCK/JCK test suite</li>
-            <li>Test can consist of single or multiple Java/C/C++/ShellScript/HTML files
-              <ul>
-                <li>Tests are automatically discovered by the harness
-                  trough <a href="http://openjdk.java.net/jtreg/tag-spec.html">embedded
-                    tags</a></li>
-                <li>Check
-                  the <a href="http://openjdk.java.net/jtreg/faq.html"><code>JTreg</code>
-                    FAQ</a> or have a look at the tests
-                  under <a href="http://hg.openjdk.java.net/jdk9/jdk9/jdk/file/tip/test/"><span class="code">jdk/test/</span></a></li>
-              </ul>
-            </li>
-            <li>Can execute <a href="http://junit.org/">JUnit</a> and <a href="http://testng.org">TestNG</a> tests</li>
-            <li>See <a href="http://download.java.net/openjdk/testresults/9">JDK 9 Early Access Build Test Results</a> and<br/>
-              <a href="http://download.java.net/openjdk/testresults/8">JDK 8 Update Releases Early Access Build Test Results</a></li>
-            <li>Binaries
-            (<a href="https://adopt-openjdk.ci.cloudbees.com/job/jtreg/lastSuccessfulBuild/artifact/"><code>jtreg</code></a>/<a href="https://adopt-openjdk.ci.cloudbees.com/job/jtreg/lastSuccessfulBuild/artifact/"><code>jtharness</code></a>)
-             are available from the <a href="https://wiki.openjdk.java.net/display/Adoption">Adoption Group</a></li>
-          </ul>
+          <section>
+            <h2>OpenJDK Tools - <a href="http://openjdk.java.net/jtreg/"><code style="text-transform: none;"><b>JTreg</b></code></a></h2>
+
+            <ul>
+              <li><code>JTreg</code>
+                is a Regression Test Harness for the OpenJDK platform
+              </li>
+              <li>The same harness which is used to run the TCK/JCK test suite</li>
+              <li>Test can consist of single or multiple Java/C/C++/ShellScript/HTML files
+                <ul>
+                  <li>Tests are automatically discovered by the harness
+                    trough <a href="http://openjdk.java.net/jtreg/tag-spec.html">embedded
+                      tags</a></li>
+                  <li>Check
+                    the <a href="http://openjdk.java.net/jtreg/faq.html"><code>JTreg</code>
+                      FAQ</a> or have a look at the tests
+                    under <a href="http://hg.openjdk.java.net/jdk9/jdk9/jdk/file/tip/test/"><span class="code">jdk/test/</span></a></li>
+                </ul>
+              </li>
+              <li>Can execute <a href="http://junit.org/">JUnit</a> and <a href="http://testng.org">TestNG</a> tests</li>
+              <li>See <a href="http://download.java.net/openjdk/testresults/8/index.html">JDK 8 Update Releases</a>,
+                <a href="http://download.java.net/openjdk/testresults/9/index.html">JDK 9</a> and
+                <a href="http://download.java.net/openjdk/testresults/10/index.html">JDK 10</a> <br/> Early Access Build Test Results for a base line reference</li>
+              <li>Binaries
+                (<a href="https://adopt-openjdk.ci.cloudbees.com/job/jtreg/lastSuccessfulBuild/artifact/"><code>jtreg</code></a>/<a href="https://adopt-openjdk.ci.cloudbees.com/job/jtreg/lastSuccessfulBuild/artifact/"><code>jtharness</code></a>)
+                are available from the <a href="https://wiki.openjdk.java.net/display/Adoption">Adoption Group</a></li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2>Building <code>JTreg</code></h2>
+
+            <pre class="big noshadow" style="height:100%; margin: 0;" data-trim="true">
+              <code class="terminal" data-trim="true" data-noescape="true" style="">
+$ <span class="fragment">hg clone http://hg.openjdk.java.net/code-tools/jtreg jtreg
+$ </span><span class="fragment">cd jtreg
+$ </span><span class="fragment">sh make/build-all.sh &lt;JAVA_HOME&gt;
+...
+$ </span><span class="fragment">./build/images/jtreg/bin/jtreg -version
+jtreg, version 4.2 dev b11
+...
+JTHarness: version 5.0
+JCov 3.0-2
+TestNG (testng.jar): version unknown
+TestNG (jcommander.jar): version 1.72
+AsmTools: version 7.0
+</span>
+             </code>
+            </pre>
+          </section>
+
+          <section>
+            <h2>Running <code>JTreg</code></h2>
+
+            <p>See <a href="http://openjdk.java.net/jtreg/command-help.html">jtreg: Command Line Options</a> or run "<code>jtreg --help</code>"</p>
+
+            <pre class="big noshadow" style="height:100%; margin: 0;" data-trim="true">
+              <code class="terminal" data-trim="true" data-noescape="true" style="">
+$ <span class="fragment">jtreg <span class="fragment highlight-current-border">-dir:&lt;OPENJDK_SRC&gt;/test/jdk</span> \
+        <span class="fragment highlight-current-border">-exclude:&lt;OPENJDK_SRC&gt;/test/jdk/ProblemList.txt</span> \
+        <span class="fragment highlight-current-border">-testjdk:&lt;OPENJDK_BUILD&gt;/images/jdk</span> \
+        <span class="fragment highlight-current-border">-nativepath:&lt;OPENJDK_BUILD&gt;/images/test/jdk/jtreg/native</span> \
+        <span class="fragment highlight-current-border">-verbose:summary</span> <span class="fragment highlight-current-border">-conc:2</span> <span class="fragment highlight-current-border">-Xmx512m -automatic</span> \
+        <span class="fragment highlight-current-border">-ignore:quiet</span> <span class="fragment highlight-current-border">-timeoutFactor:5</span> <span class="fragment highlight-current-border">-agentvm</span> <span class="fragment highlight-current-border">:jdk_stable</span></span>
+<span class="fragment">Directory "<span class="fragment highlight-current-border">JTwork</span>" not found: creating
+Directory "<span class="fragment highlight-current-border">JTreport</span>" not found: creating
+Passed: java/lang/Compare.java
+Passed: java/lang/HashCode.java
+...
+<span class="fragment">Test results: passed: 6,458; failed: 6; error: 8
+Report written to <a href="images/JTreport/html/report.html">/tmp/JTreport/html/report.html</a>
+Results written to /tmp/JTwork</span>
+</span>
+             </code>
+            </pre>
+
+            <span class="fragment"><p>There's also a text version under <a href="images/JTreport/text/summary.txt"><code>/tmp/JTreport/text/summary.txt</code></a></p></span>
+          </section>
+<!--
+Test results: passed: 6,459; failed: 5; error: 8
+Report written to /tmp/JTreport/html/report.html
+Results written to /tmp/JTwork
+Error: Some tests failed or other problems occurred.
+
+real	218m45.535s
+user	563m7.932s
+sys	51m29.896s
+-->
+
+          <section>
+            <h2><code>JTreg -gui</code></h2>
+
+            <div width="100%" style="position: relative; margin: 0 0 0 0px;">
+              <div class="" style="position: static;">
+                <object data="images/JTreg_gui_1.png" type="image/png"
+                        style="">&nbsp;</object>
+              </div>
+              <div class="fragment" data-fragment-index="1" style="position: absolute; left: 0; top: 0; width: 100%">
+                <object data="images/JTreg_gui_2.png" type="image/png"
+                        style="">&nbsp;</object>
+              </div>
+              <div class="fragment" data-fragment-index="2" style="position: absolute; left: 0; top: 0; width: 100%">
+                <object data="images/JTreg_gui_3.png" type="image/png"
+                        style="">&nbsp;</object>
+              </div>
+            </div>
+          </section>
 
         </section>
 
@@ -717,7 +734,7 @@ OpenJDK 64-Bit Server VM (build 1.9.0-internal-debug-simonis_2015_09_23_11_54-b0
           <ul>
             <li><a href="http://openjdk.java.net/guide/webrevHelp.html">Webrev</a> is a "poor man's"
               code review system (e.g. <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/8081674.jdk/">webrev for Bug 8081674</a>)</li>
-            <li>A collection of diffs and patches in different formats</li>
+            <li>Creates collection of diffs and patches in different formats</li>
             <li>Ability to graphically display diffs in HTML-frames</li>
             <li>May include additional HTML-formatted documentation</li>
             <li>Ability to automatically link back to Java bugs at <a href="https://bugs.openjdk.java.net">https://bugs.openjdk.java.net</a></li>
@@ -821,6 +838,223 @@ $ unzip -l /tmp/webrev.zip
               </ul>
             </li>
           </ul>
+        </section>
+
+        <section style="height:100%" data-background="images/OracleJavaSE8Overview.png" data-background-size="auto" data-background-color="#ffffff">
+
+          <a href="https://docs.oracle.com/javase/8/docs/index.html">
+          <div style="position : relative; height : 100%;">
+            <div style="position : absolute; bottom : 0; text-align : center; width : 100%;">
+              <small style="font-size:60%">(c) https://docs.oracle.com/javase/8/docs/index.html</small>
+            </div>
+          </div>
+          </a>
+        </section>
+
+        <section class="demo">
+
+	  <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
+	    <tbody>
+
+<tr><td>102: <a href="http://openjdk.java.net/jeps/102">Process
+API Updates</a></td></tr>
+<tr><td>110: <a href="http://openjdk.java.net/jeps/110">HTTP 2
+Client</a></td></tr>
+<tr><td>143: <a href="http://openjdk.java.net/jeps/143">Improve Contended
+Locking</a></td></tr>
+<tr><td>158: <a href="http://openjdk.java.net/jeps/158">Unified JVM
+Logging</a></td></tr>
+<tr><td>165: <a href="http://openjdk.java.net/jeps/165">Compiler
+Control</a></td></tr>
+<tr><td>193: <a href="http://openjdk.java.net/jeps/193">Variable
+Handles</a></td></tr>
+<tr><td>197: <a href="http://openjdk.java.net/jeps/197">Segmented Code
+Cache</a></td></tr>
+<tr><td>199: <a href="http://openjdk.java.net/jeps/199">Smart Java
+Compilation, Phase Two</a></td></tr>
+<tr><td>200: <a href="http://openjdk.java.net/jeps/200">The Modular
+JDK</a></td></tr>
+<tr><td>201: <a href="http://openjdk.java.net/jeps/201">Modular Source
+Code</a></td></tr>
+<tr><td>211: <a href="http://openjdk.java.net/jeps/211">Elide Deprecation
+Warnings on Import Statements</a></td></tr>
+<tr><td>212: <a href="http://openjdk.java.net/jeps/212">Resolve Lint and
+Doclint Warnings</a></td></tr>
+<tr><td>213: <a href="http://openjdk.java.net/jeps/213">Milling Project
+Coin</a></td></tr>
+<tr><td>214: <a href="http://openjdk.java.net/jeps/214">Remove GC
+Combinations Deprecated in JDK 8</a></td></tr>
+<tr><td>215: <a href="http://openjdk.java.net/jeps/215">Tiered Attribution
+for javac</a></td></tr>
+<tr><td>216: <a href="http://openjdk.java.net/jeps/216">Process Import
+Statements Correctly</a></td></tr>
+<tr><td>217: <a href="http://openjdk.java.net/jeps/217">Annotations
+Pipeline 2.0</a></td></tr>
+<tr><td>219: <a href="http://openjdk.java.net/jeps/219">Datagram Transport
+Layer Security (DTLS)</a></td></tr>
+<tr><td>220: <a href="http://openjdk.java.net/jeps/220">Modular Run-Time
+Images</a></td></tr>
+<tr><td>221: <a href="http://openjdk.java.net/jeps/221">Simplified Doclet
+API</a></td></tr>
+<tr><td>222: <a href="http://openjdk.java.net/jeps/222">jshell: The Java
+Shell (Read-Eval-Print Loop)</a></td></tr>
+<tr><td>223: <a href="http://openjdk.java.net/jeps/223">New Version-String
+Scheme</a></td></tr>
+<tr><td>224: <a href="http://openjdk.java.net/jeps/224">HTML5
+Javadoc</a></td></tr>
+<tr><td>225: <a href="http://openjdk.java.net/jeps/225">Javadoc
+Search</a></td></tr>
+<tr><td>226: <a href="http://openjdk.java.net/jeps/226">UTF-8 Property
+Files</a></td></tr>
+<tr><td>227: <a href="http://openjdk.java.net/jeps/227">Unicode
+7.0</a></td></tr>
+<tr><td>228: <a href="http://openjdk.java.net/jeps/228">Add More Diagnostic
+Commands</a></td></tr>
+<tr><td>229: <a href="http://openjdk.java.net/jeps/229">Create PKCS12
+Keystores by Default</a></td></tr>
+<tr><td>231: <a href="http://openjdk.java.net/jeps/231">Remove Launch-Time
+JRE Version Selection</a></td></tr>
+<tr><td>232: <a href="http://openjdk.java.net/jeps/232">Improve Secure
+Application Performance</a></td></tr>
+
+            </tbody>
+          </table>
+	  <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
+	    <tbody>
+
+
+<tr><td>233: <a href="http://openjdk.java.net/jeps/233">Generate Run-Time
+Compiler Tests Automatically</a></td></tr>
+<tr><td>235: <a href="http://openjdk.java.net/jeps/235">Test Class-File
+Attributes Generated by javac</a></td></tr>
+<tr><td>236: <a href="http://openjdk.java.net/jeps/236">Parser API for
+Nashorn</a></td></tr>
+<tr><td>237: <a href="http://openjdk.java.net/jeps/237">Linux/AArch64
+Port</a></td></tr>
+<tr><td>238: <a href="http://openjdk.java.net/jeps/238">Multi-Release JAR
+Files</a></td></tr>
+<tr><td>240: <a href="http://openjdk.java.net/jeps/240">Remove the JVM TI
+hprof Agent</a></td></tr>
+<tr><td>241: <a href="http://openjdk.java.net/jeps/241">Remove the jhat
+Tool</a></td></tr>
+<tr><td>243: <a href="http://openjdk.java.net/jeps/243">Java-Level JVM
+Compiler Interface</a></td></tr>
+<tr><td>244: <a href="http://openjdk.java.net/jeps/244">TLS
+Application-Layer Protocol Negotiation Extension</a></td></tr>
+<tr><td>245: <a href="http://openjdk.java.net/jeps/245">Validate JVM
+Command-Line Flag Arguments</a></td></tr>
+<tr><td>246: <a href="http://openjdk.java.net/jeps/246">Leverage CPU
+Instructions for GHASH and RSA</a></td></tr>
+<tr><td>247: <a href="http://openjdk.java.net/jeps/247">Compile for Older
+Platform Versions</a></td></tr>
+<tr><td>248: <a href="http://openjdk.java.net/jeps/248">Make G1 the Default
+Garbage Collector</a></td></tr>
+<tr><td>249: <a href="http://openjdk.java.net/jeps/249">OCSP Stapling for
+TLS</a></td></tr>
+<tr><td>250: <a href="http://openjdk.java.net/jeps/250">Store Interned
+Strings in CDS Archives</a></td></tr>
+<tr><td>251: <a href="http://openjdk.java.net/jeps/251">Multi-Resolution
+Images</a></td></tr>
+<tr><td>252: <a href="http://openjdk.java.net/jeps/252">Use CLDR Locale
+Data by Default</a></td></tr>
+<tr><td>253: <a href="http://openjdk.java.net/jeps/253">Prepare JavaFX UI
+Controls &amp; CSS APIs for Modularization</a></td></tr>
+<tr><td>254: <a href="http://openjdk.java.net/jeps/254">Compact
+Strings</a></td></tr>
+<tr><td>255: <a href="http://openjdk.java.net/jeps/255">Merge Selected
+Xerces 2.11.0 Updates into JAXP</a></td></tr>
+<tr><td>256: <a href="http://openjdk.java.net/jeps/256">BeanInfo
+Annotations</a></td></tr>
+<tr><td>257: <a href="http://openjdk.java.net/jeps/257">Update JavaFX/Media
+to Newer Version of GStreamer</a></td></tr>
+<tr><td>258: <a href="http://openjdk.java.net/jeps/258">HarfBuzz
+Font-Layout Engine</a></td></tr>
+<tr><td>259: <a href="http://openjdk.java.net/jeps/259">Stack-Walking
+API</a></td></tr>
+<tr><td>260: <a href="http://openjdk.java.net/jeps/260">Encapsulate Most
+Internal APIs</a></td></tr>
+<tr><td>261: <a href="http://openjdk.java.net/jeps/261">Module
+System</a></td></tr>
+<tr><td>262: <a href="http://openjdk.java.net/jeps/262">TIFF Image
+I/O</a></td></tr>
+<tr><td>263: <a href="http://openjdk.java.net/jeps/263">HiDPI Graphics on
+Windows and Linux</a></td></tr>
+<tr><td>264: <a href="http://openjdk.java.net/jeps/264">Platform Logging
+API and Service</a></td></tr>
+<tr><td>265: <a href="http://openjdk.java.net/jeps/265">Marlin Graphics
+Renderer</a></td></tr>
+
+            </tbody>
+          </table>
+	  <table style="font-size: 10.5pt; display: inline; padding: 0 0 0 0; border: none;">
+	    <tbody>
+
+
+<tr><td>266: <a href="http://openjdk.java.net/jeps/266">More Concurrency
+Updates</a></td></tr>
+<tr><td>267: <a href="http://openjdk.java.net/jeps/267">Unicode
+8.0</a></td></tr>
+<tr><td>268: <a href="http://openjdk.java.net/jeps/268">XML
+Catalogs</a></td></tr>
+<tr><td>269: <a href="http://openjdk.java.net/jeps/269">Convenience Factory
+Methods for Collections</a></td></tr>
+<tr><td>270: <a href="http://openjdk.java.net/jeps/270">Reserved Stack
+Areas for Critical Sections</a></td></tr>
+<tr><td>271: <a href="http://openjdk.java.net/jeps/271">Unified GC
+Logging</a></td></tr>
+<tr><td>272: <a href="http://openjdk.java.net/jeps/272">Platform-Specific
+Desktop Features</a></td></tr>
+<tr><td>273: <a href="http://openjdk.java.net/jeps/273">DRBG-Based
+SecureRandom Implementations</a></td></tr>
+<tr><td>274: <a href="http://openjdk.java.net/jeps/274">Enhanced Method
+Handles</a></td></tr>
+<tr><td>275: <a href="http://openjdk.java.net/jeps/275">Modular Java
+Application Packaging</a></td></tr>
+<tr><td>276: <a href="http://openjdk.java.net/jeps/276">Dynamic Linking of
+Language-Defined Object Models</a></td></tr>
+<tr><td>277: <a href="http://openjdk.java.net/jeps/277">Enhanced
+Deprecation</a></td></tr>
+<tr><td>278: <a href="http://openjdk.java.net/jeps/278">Additional Tests
+for Humongous Objects in G1</a></td></tr>
+<tr><td>279: <a href="http://openjdk.java.net/jeps/279">Improve
+Test-Failure Troubleshooting</a></td></tr>
+<tr><td>280: <a href="http://openjdk.java.net/jeps/280">Indify String
+Concatenation</a></td></tr>
+<tr><td>281: <a href="http://openjdk.java.net/jeps/281">HotSpot C++
+Unit-Test Framework</a></td></tr>
+<tr><td>282: <a href="http://openjdk.java.net/jeps/282">jlink: The Java
+Linker</a></td></tr>
+<tr><td>283: <a href="http://openjdk.java.net/jeps/283">Enable GTK 3 on
+Linux</a></td></tr>
+<tr><td>284: <a href="http://openjdk.java.net/jeps/284">New HotSpot Build
+System</a></td></tr>
+<tr><td>285: <a href="http://openjdk.java.net/jeps/285">Spin-Wait
+Hints</a></td></tr>
+<tr><td>287: <a href="http://openjdk.java.net/jeps/287">SHA-3 Hash
+Algorithms</a></td></tr>
+<tr><td>288: <a href="http://openjdk.java.net/jeps/288">Disable SHA-1
+Certificates</a></td></tr>
+<tr><td>289: <a href="http://openjdk.java.net/jeps/289">Deprecate the
+Applet API</a></td></tr>
+<tr><td>290: <a href="http://openjdk.java.net/jeps/290">Filter Incoming
+Serialization Data</a></td></tr>
+<tr><td>291: <a href="http://openjdk.java.net/jeps/291">Deprecate the
+Concurrent Mark Sweep (CMS) GC</a></td></tr>
+<tr><td>292: <a href="http://openjdk.java.net/jeps/292">Implement Selected
+ECMAScript 6 Features in Nashorn</a></td></tr>
+<tr><td>294: <a href="http://openjdk.java.net/jeps/294">Linux/s390x
+Port</a></td></tr>
+<tr><td>295: <a href="http://openjdk.java.net/jeps/295">Ahead-of-Time
+Compilation</a></td></tr>
+<tr><td>297: <a href="http://openjdk.java.net/jeps/297">Unified arm32/arm64
+Port</a></td></tr>
+<tr><td>298: <a href="http://openjdk.java.net/jeps/298">Remove Demos and
+Samples</a></td></tr>
+<tr><td>299: <a href="http://openjdk.java.net/jeps/299">Reorganize
+Documentation</a></td></tr>
+
+            </tbody>
+          </table>
         </section>
 
         <section>

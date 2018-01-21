@@ -1,0 +1,162 @@
+#Test Results (version 2)
+#Sat Jan 20 20:08:37 CET 2018
+#-----testdescription-----
+$file=/share/OpenJDK/jdk-hs/test/jdk/com/sun/jdi/JdbExprTest.sh
+$root=/share/OpenJDK/jdk-hs/test/jdk
+author=Staffan Larsen
+keywords=bug4660158 intermittent shell
+modules=jdk.jdi
+requires=os.family \!\= "windows"
+run=USER_SPECIFIED shell JdbExprTest.sh\n
+source=JdbExprTest.sh
+title=\ 
+
+#-----environment-----
+
+#-----testresult-----
+description=file\:/share/OpenJDK/jdk-hs/test/jdk/com/sun/jdi/JdbExprTest.sh
+elapsed=6892 0\:00\:06.892
+end=Sat Jan 20 20\:08\:37 CET 2018
+environment=regtest
+execStatus=Failed. Execution failed\: exit code 1
+harnessLoaderMode=Classpath Loader
+harnessVariety=Full Bundle
+hostname=simonis
+javatestOS=Linux 4.2.0-42-generic (amd64)
+javatestVersion=5.0
+jtregVersion=jtreg 4.2 dev b11
+modules=jdk.jdi
+script=com.sun.javatest.regtest.exec.RegressionScript
+sections=script_messages shell
+start=Sat Jan 20 20\:08\:30 CET 2018
+test=com/sun/jdi/JdbExprTest.sh
+testJDK=/share/output-jdk-hs-opt/images/jdk
+totalTime=6892
+user.name=simonis
+work=/tmp/JTwork/com/sun/jdi
+
+#section:script_messages
+----------messages:(4/244)----------
+JDK under test: /share/output-jdk-hs-opt/images/jdk
+openjdk version "10-internal" 2018-03-20
+OpenJDK Runtime Environment (build 10-internal+0-adhoc.simonis.jdk-hs)
+OpenJDK 64-Bit Server VM (build 10-internal+0-adhoc.simonis.jdk-hs, mixed mode)
+
+#section:shell
+----------messages:(3/117)----------
+command: shell JdbExprTest.sh
+reason: User specified action: run shell JdbExprTest.sh 
+elapsed time (seconds): 6.892
+----------System.out:(24/1225)----------
+--Compiling first version of /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/JdbExprTest.java with options: -g
+compiling  JdbExprTest.java
+
+--Starting jdb, address=
+Listening at address: simonis:58493
+--Starting debuggee with args from TESTVMOPTS and/or TESTJAVAOPTS: -Xmx512m 
+Cmd: /share/output-jdk-hs-opt/images/jdk/bin/java  -classpath /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411 -DHANGINGJAVA-15411_DEB -Xmx512m              -Djtreg.classDir=/tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411             -showversion              -agentlib:jdwp=transport=dt_socket,address=58493,server=n,suspend=y              JdbExprTest
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+Initializing jdb ...
+
+VM Started: > No frames on the current call stack
+
+main[1] Deferring breakpoint JdbExprTest:12.
+It will be set after the class is loaded.
+main[1] > Set deferred breakpoint JdbExprTest:12
+
+Breakpoint hit: "thread=main", JdbExprTest.bkpt(), line=12 bci=0
+12           int i = 0;     //@1 breakpoint
+
+main[1] com.sun.tools.example.debug.expr.ParseException: Name unknown: java.lang.Long.MAX_VALUE
+ java.lang.Long.MAX_VALUE = null
+main[1] 
+The application has been disconnected
+----------System.err:(60/2717)*----------
+ShellScaffold.sh: Running with timeout_factor = 5
+--Sending cmd:  stop at JdbExprTest:12
+--Sending cmd:  run
+openjdk version "10-internal" 2018-03-20
+OpenJDK Runtime Environment (build 10-internal+0-adhoc.simonis.jdk-hs)
+OpenJDK 64-Bit Server VM (build 10-internal+0-adhoc.simonis.jdk-hs, mixed mode)
+--Sending cmd:  print java.lang.Long.MAX_VALUE
+killing debuggee: kill -9 15579 15582 
+killing debugger: kill -9 15500 
+--waitForFinish: Waiting for all processes to finish
+-rw-rw-r-- 1 simonis simonis 934 Jan 20 20:08 /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/testFailed
+<waitForFinish:_begin_failFile_contents>
+ 
+--Fail: Required output " \\= 9223372036854775807" not found in /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/jxdbOutput.txt /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/jxdbOutput.txt
+---- contents of /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/jxdbOutput.txt follows -------
+Listening at address: simonis:58493
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+Initializing jdb ...
+
+VM Started: > No frames on the current call stack
+
+main[1] Deferring breakpoint JdbExprTest:12.
+It will be set after the class is loaded.
+main[1] > Set deferred breakpoint JdbExprTest:12
+
+Breakpoint hit: "thread=main", JdbExprTest.bkpt(), line=12 bci=0
+12           int i = 0;     //@1 breakpoint
+
+main[1] com.sun.tools.example.debug.expr.ParseException: Name unknown: java.lang.Long.MAX_VALUE
+ java.lang.Long.MAX_VALUE = null
+main[1] 
+The application has been disconnected
+---------------
+<waitForFinish:_end_failFile_contents>
+-rw-rw-r-- 1 simonis simonis 934 Jan 20 20:08 /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/testFailed
+<cleanup:_begin_failFile_contents>
+ 
+--Fail: Required output " \\= 9223372036854775807" not found in /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/jxdbOutput.txt /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/jxdbOutput.txt
+---- contents of /tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d/aa15411/jxdbOutput.txt follows -------
+Listening at address: simonis:58493
+Set uncaught java.lang.Throwable
+Set deferred uncaught java.lang.Throwable
+Initializing jdb ...
+
+VM Started: > No frames on the current call stack
+
+main[1] Deferring breakpoint JdbExprTest:12.
+It will be set after the class is loaded.
+main[1] > Set deferred breakpoint JdbExprTest:12
+
+Breakpoint hit: "thread=main", JdbExprTest.bkpt(), line=12 bci=0
+12           int i = 0;     //@1 breakpoint
+
+main[1] com.sun.tools.example.debug.expr.ParseException: Name unknown: java.lang.Long.MAX_VALUE
+ java.lang.Long.MAX_VALUE = null
+main[1] 
+The application has been disconnected
+---------------
+<cleanup:_end_failFile_contents>
+----------rerun:(22/829)*----------
+cd /tmp/JTwork/scratch/1 && \\
+DISPLAY=:0.0 \\
+HOME=/home/simonis \\
+LANG=en_US.UTF-8 \\
+PATH=/bin:/usr/bin \\
+XMODIFIERS=@im=none \\
+LD_LIBRARY_PATH=/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native \\
+TESTSRC=/share/OpenJDK/jdk-hs/test/jdk/com/sun/jdi \\
+TESTSRCPATH=/share/OpenJDK/jdk-hs/test/jdk/com/sun/jdi \\
+TESTCLASSES=/tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d \\
+TESTCLASSPATH=/tmp/JTwork/classes/1/com/sun/jdi/JdbExprTest.d \\
+COMPILEJAVA=/share/output-jdk-hs-opt/images/jdk \\
+TESTJAVA=/share/output-jdk-hs-opt/images/jdk \\
+TESTVMOPTS=-Xmx512m \\
+TESTTOOLVMOPTS=-J-Xmx512m \\
+TESTJAVACOPTS= \\
+TESTJAVAOPTS= \\
+TESTTIMEOUTFACTOR=5.0 \\
+TESTMODULES=jdk.jdi \\
+TESTNATIVEPATH=/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native \\
+    sh \\
+        /share/OpenJDK/jdk-hs/test/jdk/com/sun/jdi/JdbExprTest.sh
+result: Failed. Execution failed: exit code 1
+
+
+test result: Failed. Execution failed: exit code 1

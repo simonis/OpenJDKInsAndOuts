@@ -1,0 +1,9 @@
+# other_errors.txt
+javax/sound/midi/Sequencer/Recording.java 
+javax/sound/midi/Sequencer/SeqRecordDoesNotCopy.java 
+javax/sound/midi/Sequencer/SeqRecordsRealTimeEvents.java 
+javax/sound/midi/Sequencer/SetTickPosition.java 
+javax/sound/midi/Synthesizer/bug4685396.java 
+sun/security/provider/SecureRandom/AbstractDrbg/SpecTest.java 
+sun/security/provider/SecureRandom/SHA1PRNGReseed.java 
+sun/security/provider/SecureRandom/StrongSecureRandom.java 

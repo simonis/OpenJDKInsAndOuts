@@ -1,0 +1,152 @@
+#Test Results (version 2)
+#Sat Jan 20 23:37:11 CET 2018
+#-----testdescription-----
+$file=/share/OpenJDK/jdk-hs/test/jdk/tools/jlink/ReleaseImplementorTest.java
+$root=/share/OpenJDK/jdk-hs/test/jdk
+keywords=bug8171316
+run=USER_SPECIFIED main ReleaseImplementorTest\n
+source=ReleaseImplementorTest.java
+title=Add IMPLEMENTOR property to the release file
+
+#-----environment-----
+
+#-----testresult-----
+description=file\:/share/OpenJDK/jdk-hs/test/jdk/tools/jlink/ReleaseImplementorTest.java
+elapsed=57 0\:00\:00.057
+end=Sat Jan 20 23\:37\:11 CET 2018
+environment=regtest
+execStatus=Failed. Execution failed\: `main' threw exception\: java.lang.RuntimeException\: IMPLEMENTOR value is not expected length
+harnessLoaderMode=Classpath Loader
+harnessVariety=Full Bundle
+hostname=simonis
+javatestOS=Linux 4.2.0-42-generic (amd64)
+javatestVersion=5.0
+jtregVersion=jtreg 4.2 dev b11
+script=com.sun.javatest.regtest.exec.RegressionScript
+sections=script_messages build compile main
+start=Sat Jan 20 23\:37\:11 CET 2018
+test=tools/jlink/ReleaseImplementorTest.java
+testJDK=/share/output-jdk-hs-opt/images/jdk
+totalTime=57
+user.name=simonis
+work=/tmp/JTwork/tools/jlink
+
+#section:script_messages
+----------messages:(4/244)----------
+JDK under test: /share/output-jdk-hs-opt/images/jdk
+openjdk version "10-internal" 2018-03-20
+OpenJDK Runtime Environment (build 10-internal+0-adhoc.simonis.jdk-hs)
+OpenJDK 64-Bit Server VM (build 10-internal+0-adhoc.simonis.jdk-hs, mixed mode)
+
+#section:build
+----------messages:(5/157)----------
+command: build ReleaseImplementorTest
+reason: Named class compiled on demand
+Test directory:
+  compile: ReleaseImplementorTest
+elapsed time (seconds): 0.032
+result: Passed. Build successful
+
+#section:compile
+----------messages:(5/194)----------
+command: compile /share/OpenJDK/jdk-hs/test/jdk/tools/jlink/ReleaseImplementorTest.java
+reason: .class file out of date or does not exist
+Mode: agentvm
+Agent id: 1
+elapsed time (seconds): 0.032
+----------configuration:(10/456)----------
+Boot Layer (javac runtime environment)
+  class path: /share/OpenJDK/jtreg/build/images/jtreg/lib/javatest.jar 
+              /share/OpenJDK/jtreg/build/images/jtreg/lib/jtreg.jar 
+  patch:      java.base /tmp/JTwork/patches/java.base
+
+javac compilation environment
+  source path: /share/OpenJDK/jdk-hs/test/jdk/tools/jlink
+  class path:  /share/OpenJDK/jdk-hs/test/jdk/tools/jlink
+               /tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d
+
+----------rerun:(25/1477)*----------
+cd /tmp/JTwork/scratch/1 && \\
+DISPLAY=:0.0 \\
+HOME=/home/simonis \\
+LANG=en_US.UTF-8 \\
+PATH=/bin:/usr/bin \\
+XMODIFIERS=@im=none \\
+    /share/output-jdk-hs-opt/images/jdk/bin/javac \\
+        -J-Xmx512m \\
+        -J-Djava.library.path=/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native \\
+        -J-Dtest.class.path.prefix=/tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d:/share/OpenJDK/jdk-hs/test/jdk/tools/jlink \\
+        -J-Dtest.src=/share/OpenJDK/jdk-hs/test/jdk/tools/jlink \\
+        -J-Dtest.src.path=/share/OpenJDK/jdk-hs/test/jdk/tools/jlink \\
+        -J-Dtest.classes=/tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d \\
+        -J-Dtest.class.path=/tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d \\
+        -J-Dtest.vm.opts=-Xmx512m \\
+        -J-Dtest.tool.vm.opts=-J-Xmx512m \\
+        -J-Dtest.compiler.opts= \\
+        -J-Dtest.java.opts= \\
+        -J-Dtest.jdk=/share/output-jdk-hs-opt/images/jdk \\
+        -J-Dcompile.jdk=/share/output-jdk-hs-opt/images/jdk \\
+        -J-Dtest.timeout.factor=5.0 \\
+        -J-Dtest.nativepath=/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native \\
+        -d /tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d \\
+        -sourcepath /share/OpenJDK/jdk-hs/test/jdk/tools/jlink \\
+        -classpath /share/OpenJDK/jdk-hs/test/jdk/tools/jlink:/tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d /share/OpenJDK/jdk-hs/test/jdk/tools/jlink/ReleaseImplementorTest.java
+result: Passed. Compilation successful
+
+#section:main
+----------messages:(5/157)----------
+command: main ReleaseImplementorTest
+reason: User specified action: run main ReleaseImplementorTest 
+Mode: agentvm
+Agent id: 11
+elapsed time (seconds): 0.01
+----------configuration:(9/349)----------
+Boot Layer
+  class path: /share/OpenJDK/jtreg/build/images/jtreg/lib/javatest.jar 
+              /share/OpenJDK/jtreg/build/images/jtreg/lib/jtreg.jar 
+  patch:      java.base /tmp/JTwork/patches/java.base
+
+Test Layer
+  class path: /tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d
+              /share/OpenJDK/jdk-hs/test/jdk/tools/jlink
+
+----------rerun:(22/1276)*----------
+cd /tmp/JTwork/scratch/1 && \\
+DISPLAY=:0.0 \\
+HOME=/home/simonis \\
+LANG=en_US.UTF-8 \\
+PATH=/bin:/usr/bin \\
+XMODIFIERS=@im=none \\
+    /share/output-jdk-hs-opt/images/jdk/bin/java \\
+        -Dtest.class.path.prefix=/tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d:/share/OpenJDK/jdk-hs/test/jdk/tools/jlink \\
+        -Dtest.src=/share/OpenJDK/jdk-hs/test/jdk/tools/jlink \\
+        -Dtest.src.path=/share/OpenJDK/jdk-hs/test/jdk/tools/jlink \\
+        -Dtest.classes=/tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d \\
+        -Dtest.class.path=/tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d \\
+        -Dtest.vm.opts=-Xmx512m \\
+        -Dtest.tool.vm.opts=-J-Xmx512m \\
+        -Dtest.compiler.opts= \\
+        -Dtest.java.opts= \\
+        -Dtest.jdk=/share/output-jdk-hs-opt/images/jdk \\
+        -Dcompile.jdk=/share/output-jdk-hs-opt/images/jdk \\
+        -Dtest.timeout.factor=5.0 \\
+        -Dtest.nativepath=/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native \\
+        -classpath /tmp/JTwork/classes/1/tools/jlink/ReleaseImplementorTest.d:/share/OpenJDK/jdk-hs/test/jdk/tools/jlink:/share/OpenJDK/jtreg/build/images/jtreg/lib/javatest.jar:/share/OpenJDK/jtreg/build/images/jtreg/lib/jtreg.jar \\
+        ReleaseImplementorTest
+----------System.err:(12/745)----------
+java.lang.RuntimeException: IMPLEMENTOR value is not expected length
+	at ReleaseImplementorTest.main(ReleaseImplementorTest.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at com.sun.javatest.regtest.agent.MainActionHelper$SameVMRunnable.run(MainActionHelper.java:229)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+
+JavaTest Message: Test threw exception: java.lang.RuntimeException
+JavaTest Message: shutting down test
+
+result: Failed. Execution failed: `main' threw exception: java.lang.RuntimeException: IMPLEMENTOR value is not expected length
+
+
+test result: Failed. Execution failed: `main' threw exception: java.lang.RuntimeException: IMPLEMENTOR value is not expected length

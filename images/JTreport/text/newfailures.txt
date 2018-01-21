@@ -1,0 +1,6 @@
+# newfailures.txt
+com/sun/jdi/JdbExprTest.sh 
+javax/sound/sampled/Lines/StopStart.java 
+sun/security/pkcs11/Secmod/AddTrustedCert.java 
+sun/security/pkcs11/tls/TestKeyMaterial.java 
+tools/jlink/ReleaseImplementorTest.java 

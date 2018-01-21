@@ -1,0 +1,12 @@
+-dir:/share/OpenJDK/jdk-hs/test/jdk
+-verbose:summary
+-nativepath:/share/output-jdk-hs-dbg/images/test/jdk/jtreg/native
+-exclude:/share/OpenJDK/jdk-hs/test/jdk/ProblemList.txt
+-conc:2
+-Xmx512m
+-automatic
+-ignore:quiet
+-timeoutFactor:5
+-agentvm
+-testjdk:/share/output-jdk-hs-opt/images/jdk
+:jdk_stable
