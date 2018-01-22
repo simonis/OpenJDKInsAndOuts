@@ -1,0 +1,16 @@
+	
+Java_10_JEPs_Scope (Java Bug System)	
+Displaying 11 issues at 2018-01-22 18:33.	
+Summary	Scope
+JEP 286: Local-Variable Type Inference	SE
+JEP 296: Consolidate the JDK Forest into a Single Repository	Implementation
+JEP 307: Parallel Full GC for G1	Implementation
+JEP 310: Application Class-Data Sharing	Implementation
+JEP 312: Thread-Local Handshakes	JDK
+JEP 313: Remove the Native-Header Generation Tool (javah)	JDK
+JEP 314: Additional Unicode Language-Tag Extensions	SE
+JEP 316: Heap Allocation on Alternative Memory Devices	JDK
+JEP 317: Experimental Java-Based JIT Compiler	JDK
+JEP 319: Root Certificates	JDK
+JEP 322: Time-Based Release Versioning	SE
+Generated at Mon Jan 22 17:33:06 UTC 2018 by Volker Simonis using JIRA 6.4.5#64020-sha1:78acd6c502bd8e526a3f0032b770e55d6f3a3b0f. 	

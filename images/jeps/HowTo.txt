@@ -1,0 +1,29 @@
+Go to: https://bugs.openjdk.java.net
+
+Login
+
+Go to Issues -> Filter -> Java_9_JEPs_Scope
+https://bugs.openjdk.java.net/issues/?filter=33627
+
+or
+
+Go to Issues -> Filter -> Java_10_JEPs_Scope
+https://bugs.openjdk.java.net/issues/?filter=33628
+
+or
+
+Go to Issues -> Filter -> Java_11_JEPs_Scope
+https://bugs.openjdk.java.net/issues/?filter=33629
+
+
+Go to "Export" -> "Excel (Current Fields)"
+
+In Excel do: "File" -> "Save As" -> "Text (Tab delimited)"
+!!! Don't forget to convert the line endings of the resulting file to Unix-Line-Endings!!!
+
+or
+
+In Libre/Open Office Calc do: "File" -> "Save As" -> "Text CSV" -> "Use Text CSV Format" -> "Field delimiter = {TAB}" -> OK
+
+awk ' BEGIN { classes["SE"] = "SE            "; classes["JDK"] = "JDK           "; classes["Implementation"] = "Implementation"} /JEP ([0-9]+): ([^\t]+)\t(.+)/ { match($0, /JEP ([0-9]+): ([^\t]+)\t(.+)/, arr); print("<tr class=\"JEP_" classes[arr[3]] "\"><td>" arr[1] ": <a href=\"http://openjdk.java.net/jeps/" arr[1] "\">" arr[2] "</a></td></tr>"); } ' < Java9_JEPs.csv
+
