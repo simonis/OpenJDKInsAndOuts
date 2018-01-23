@@ -54,7 +54,6 @@
  .reveal table tr.JEP_Implementation {
     background-color: #f0f0f0;
   }
-
     </style>
 
     <!-- Printing and PDF exports -->
@@ -1093,9 +1092,10 @@ $ unzip -l /tmp/webrev.zip
 
         <section class="demo">
 
-	  <table style="font-size: 16pt; display: inline; padding: 0 6em 0 0; border: none;">
-            <caption style="font-size: 30pt; font-weight: bold; line-height: 200%;">Java 10</caption>
-	    <tbody>
+          <section class="demo">
+	    <table style="font-size: 16pt; display: inline; padding: 0 6em 0 0; border: none;">
+              <caption style="font-size: 30pt; font-weight: bold; line-height: 200%;">Java 10</caption>
+	      <tbody>
 <tr class="JEP_SE            "><td>286: <a href="http://openjdk.java.net/jeps/286">Local-Variable Type Inference</a></td></tr>
 <tr class="JEP_Implementation"><td>296: <a href="http://openjdk.java.net/jeps/296">Consolidate the JDK Forest into a Single Repository</a></td></tr>
 <tr class="JEP_Implementation"><td>307: <a href="http://openjdk.java.net/jeps/307">Parallel Full GC for G1</a></td></tr>
@@ -1107,22 +1107,170 @@ $ unzip -l /tmp/webrev.zip
 <tr class="JEP_JDK           "><td>317: <a href="http://openjdk.java.net/jeps/317">Experimental Java-Based JIT Compiler</a></td></tr>
 <tr class="JEP_JDK           "><td>319: <a href="http://openjdk.java.net/jeps/319">Root Certificates</a></td></tr>
 <tr class="JEP_SE            "><td>322: <a href="http://openjdk.java.net/jeps/322">Time-Based Release Versioning</a></td></tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
 
-	  <table style="font-size: 16pt; display: inline; padding: 0 0 0 0; border: none;">
-            <caption style="font-size: 30pt; font-weight: bold; line-height: 200%;">Java 11</caption>
-	    <tbody>
+	    <table style="font-size: 16pt; display: inline; padding: 0 0 0 0; border: none;">
+              <caption style="font-size: 30pt; font-weight: bold; line-height: 200%;">Java 11</caption>
+	      <tbody>
 <tr class="JEP_Implementation"><td>234: <a href="http://openjdk.java.net/jeps/234">Additional Run-Time Compiler JVM Trace Events</a></td></tr>
 <tr class="JEP_SE            "><td>309: <a href="http://openjdk.java.net/jeps/309">Dynamic Class-File Constants</a></td></tr>
 <tr class="JEP_Implementation"><td>318: <a href="http://openjdk.java.net/jeps/318">Epsilon: An Arbitrarily Low-Overhead Garbage Collector</a></td></tr>
 <tr class="JEP_SE            "><td>320: <a href="http://openjdk.java.net/jeps/320">Remove the Java EE and CORBA Modules</a></td></tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="demo">
+
+            <h2>JEP 286: <a href="http://openjdk.java.net/jeps/286">Local-Variable Type Inference</a></h2>
+
+            <pre class="big noshadow" style="height:100%; margin: 0;" data-trim="true">
+              <code class="java" data-trim="true" data-noescape="true" style="height:100%">
+import java.nio.file.Paths;
+import java.nio.file.Files;
+
+public class LVTI {
+
+  public static void main(String... args) throws Exception {
+
+    <span class="fragment highlight-current-border" data-fragment-index="1">var path</span> = Paths.get(args[0]);        <span class="fragment" data-fragment-index="1">// infers java.nio.file.Path</span>
+
+    <span class="fragment highlight-current-border" data-fragment-index="2">var lines</span> = Files.readAllLines(path); <span class="fragment" data-fragment-index="2">// infers java.util.List&lt;String&gt;</span>
+
+    lines.forEach(System.out::println);
+
+    for (<span class="fragment highlight-current-border" data-fragment-index="3">var it</span> = lines.iterator(); it.hasNext(); ) { <span class="fragment" data-fragment-index="3">// infers Iterator&lt;String&gt;</span>
+      System.out.println(it.next());
+    }
+  }
+}
+              </code>
+            </pre>
+          </section>
+
+          <section class="demo">
+
+            <div style="width: 100%">
+              <div style="float: left; width: 50%">
+
+            <pre class="big noshadow" style="height:100%; margin: 0; display: block" data-trim="true">
+              <code class="java" data-trim="true" data-noescape="true" style="height:100%">
+public class Var9 {
+
+  static class <span class="fragment highlight-border" data-fragment-index="3">var</span> {
+    int var(int var) { return var; }
+  }
+
+  public static void main(String[] args) {
+    int var = 42;
+
+    System.out.println(var);
+
+    System.out.println(new var().var(var));
+  }
+}
+              </code>
+            </pre>
+            <pre class="big noshadow" style="height:100%; margin: 0; display: block;" data-trim="true">
+              <code class="terminal" data-trim="true" data-noescape="true" style="height:100%">
+$ <span class="fragment" data-fragment-index="1">&lt;JAVA_9&gt;/bin/javac Var9.java
+$ </span><span class="fragment" data-fragment-index="2">&lt;JAVA_10&gt;/bin/javac Var9.java
+</span><span class="fragment" data-fragment-index="3">Var9.java:3: error: 'var' not allowed here
+  static class <span class="fragment highlight-border border-no-bottom" data-fragment-index="3">var</span> {
+               <span class="fragment highlight-border border-no-top" data-fragment-index="3">^  </span>
+  as of release 10, 'var' is a
+  <span class="fragment highlight-border" data-fragment-index="3">restricted local variable type</span> and cannot
+  be used for type declarations</span>
+              </code>
+            </pre>
+
+              </div>
+              <div style="position:relative; float: right; width: 50%">
+
+            <pre class="big noshadow" style="height:100%; margin: 0; display: block" data-trim="true">
+              <code class="java" data-trim="true" data-noescape="true" style="height:100%">
+public class Var10 {
+
+  static class <span class="fragment highlight-border" data-fragment-index="4">Var</span> {
+    int var(int var) { return var; }
+  }
+
+  public static void main(String[] args) {
+    int var = 42;
+
+    System.out.println(var);
+
+    System.out.println(new <span class="fragment highlight-border" data-fragment-index="4">Var</span>().var(var));
+  }
+}
+              </code>
+            </pre>
+            <pre class="big noshadow" style="height:100%; margin: 0; display: block;" data-trim="true">
+              <code class="terminal" data-trim="true" data-noescape="true" style="height:100%">
+$ <span class="fragment" data-fragment-index="5">&lt;JAVA_9&gt;/bin/javac Var10.java
+$ </span><span class="fragment" data-fragment-index="6">&lt;JAVA_10&gt;/bin/javac Var10.java
+$ </span>
+
+
+
+
+
+<span/>
+              </code>
+            </pre>
+
+              </div>
+            </div>
+
+          </section>
+
         </section>
 
         <section>
-          <h2><a href="https://wiki.openjdk.java.net/display/csr/Main"><b>CSR</b> - Compatibility &amp; Specification Review</a></h2>
+
+          <section>
+            <h2><a href="https://wiki.openjdk.java.net/display/csr/Main"><b>CSR</b> - Compatibility &amp; Specification Review</a></h2>
+
+            <ul>
+              <li>Source compatibility:
+                <ul>
+                  <li>concerns translating Java source code into class files</li>
+                </ul>
+              </li>
+              <li>Binary compatibility:
+                <ul>
+                  <li>defined in the <a href="https://docs.oracle.com/javase/specs/jls/se9/html/jls-13.html#jls-13.2">JLS</a> as preserving the ability to link without error</li>
+                </ul>
+              </li>
+              <li>Behavioral compatibility:
+                <ul>
+                  <li>includes the semantics of the code that is executed at runtime</li>
+                </ul>
+              </li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2><a href="https://wiki.openjdk.java.net/display/csr/Main"><b>CSR</b> - Compatibility &amp; Specification Review</a></h2>
+
+            <ul>
+              All of the following changes require a <a href="https://bugs.openjdk.java.net/secure/Dashboard.jspa?selectPageId=17313">CSR review</a>:
+
+              <ul>
+                <li>Changes to public exported APIs in java.* and javax.* packages.</li>
+                <li>Changes to public and exported APIs in jdk.*packages.</li>
+                <li>New language updates to the Java Programming Language</li>
+                <li>New structures in the Java Virtual Machine Specification</li>
+                <li>Adding or removing a command in $JDK/bin</li>
+                <li>Adding, removing, or changing a command line option</li>
+                <li>Using or defining an environment variable</li>
+                <li>Using or defining a new file format or wire format</li>
+                <li>Changing or defining a new system or security property</li>
+              </ul>
+            </ul>
+          </section>
 
         </section>
 
@@ -1137,9 +1285,10 @@ $ unzip -l /tmp/webrev.zip
                 <ul>
                   <li>this is currently a self-certification</li>
                   <li>there are to many configurations (i.e. GCs, JITs, etc.) to test them all</li>
-                  <li>the TCK tests standard conformance and <strong>not</strong> quality/performance/stability!</li>
+                  <li>the TCK tests standard conformance <strong>not</strong> quality/performance/stability!</li>
                 </ul>
               </li>
+              <li><code>JTreg</code> tests are incomplete and instable (at least some)</li>
             </ul>
 
           </section>
@@ -1192,10 +1341,11 @@ $ unzip -l /tmp/webrev.zip
           <ul>
             <li>Any Contributor may propose the creation of a new Project</li>
             <li>At least one Group Lead must sponsor the proposed Project!!!</li>
-            <li>Step 0 (Discuss): <code>"Call for Discussion: &lt;project name&gt;"</code> to discuss list</li>
-            <li>Step 1 (Propose): <code>"CFV: New Project: &lt;project name&gt;"</code> to announce list</li>
-            <li>Step 2 (Vote): <code>"Re: CFV: New Project: &lt;project name&gt;"</code> to discuss list</li>
-            <li>Step 3 (Results): Announce results to announce list</li>
+            <li><a href="http://openjdk.java.net/projects/#new-project-discuss">Step 0 (Discuss)</a>: <code>"Call for Discussion: &lt;project name&gt;"</code> to discuss list</li>
+            <li><a href="http://openjdk.java.net/projects/#new-project-propose">Step 1 (Propose)</a>: <code>"CFV: New Project: &lt;project name&gt;"</code> to announce list</li>
+            <li><a href="http://openjdk.java.net/projects/#new-project-vote">Step 2 (Vote)</a>: <code>"Re: CFV: New Project: &lt;project name&gt;"</code> to discuss list</li>
+            <li><a href="http://openjdk.java.net/projects/#new-project-appoint">Step 3 (Results)</a>: Announce results to announce list<br/><br/></li>
+            <li>You'll probably still need a JEP to integrate into the main line!</li>
           </ul>
         </section>
 

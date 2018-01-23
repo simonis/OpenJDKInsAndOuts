@@ -134,6 +134,27 @@ mark.border-no-bottom {
   border-radius: 10px;
   margin: 5px -5px 5px -5px;
 }
+.reveal .slides section .fragment.highlight-border.border-no-top.visible {
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent #1B91FF #1B91FF #1B91FF;
+  border-radius: 10px;
+  margin: 5px -5px 5px -5px;
+}
+.reveal .slides section .fragment.highlight-border.border-no-bottom.visible {
+  border-style: solid;
+  border-width: 5px;
+  border-color: #1B91FF #1B91FF transparent #1B91FF;
+  border-radius: 10px;
+  margin: 5px -5px 5px -5px;
+}
+.reveal .slides section .fragment.highlight-border.border-no-bottom-top.visible {
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent #1B91FF transparent #1B91FF;
+  border-radius: 10px;
+  margin: 5px -5px 5px -5px;
+}
 .reveal .slides section .fragment.highlight-current-border.current-fragment {
   border: 5px solid #1B91FF;
   border-radius: 10px;
