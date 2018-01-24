@@ -453,94 +453,134 @@
         </section>
 
         <section>
-          <h2>Reporting a Bug</h2>
 
-          <ul>
-            <li>Try to reproduce the bug with the latest builds (
-              <a href="http://jdk9.java.net">http://jdk9.java.net</a>, <a href="http://jdk.java.net/10">http://jdk.java.net/10/</a>)</li>
-            <li>Try with a debug build (you'll have to build it!) - this may give you more insights</li>
-            <li>Try to write a simple test case (if possible a <code>JTreg</code> test)</li>
-            <li>Search for similar bugs in the bug database <a href="https://bugs.openjdk.java.net">https://bugs.openjdk.java.net</a>
-              <ul>
-                <li>Not all bugs are visible (security bugs, customer bugs, ..)</li>
-              </ul>
-            </li>
-            <li>Non-Authors can only submit through <a href="http://bugs.java.com/">http://bugs.java.com/</a>
-              <ul>
-                <li>Creates only a temporary bug IDs - 'real' bug IDs issued after triaging</li>
-              </ul>
-            </li>
-            <li>Write directly to the corresponding mailing list:
-              <ul>
-                <li>For simply reproducible bugs</li>
-                <li>If you have a <code>hs_err</code> file</li>
-              </ul>
-            </li>
-          </ul>
+          <section>
+            <h2>Reporting a Bug</h2>
+
+            <ul>
+              <li>Try to reproduce the bug with the latest builds (
+                <a href="http://jdk9.java.net">http://jdk9.java.net</a>, <a href="http://jdk.java.net/10">http://jdk.java.net/10/</a>)</li>
+              <li>Try with a debug build (you'll have to build it!) - this may give you more insights</li>
+              <li>Try to write a simple test case (if possible a <code>JTreg</code> test)</li>
+              <li>Search for similar bugs in the bug database <a href="https://bugs.openjdk.java.net">https://bugs.openjdk.java.net</a>
+                <ul>
+                  <li>Not all bugs are visible (security bugs, customer bugs, ..)</li>
+                </ul>
+              </li>
+              <li>Non-Authors can only submit through <a href="http://bugs.java.com/">http://bugs.java.com/</a>
+                <ul>
+                  <li>Creates only a temporary bug IDs - 'real' bug IDs issued after triaging</li>
+                </ul>
+              </li>
+              <li>Write directly to the corresponding mailing list:
+                <ul>
+                  <li>For simply reproducible bugs</li>
+                  <li>If you have a <code>hs_err</code> file</li>
+                </ul>
+              </li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2><a href="http://openjdk.java.net/contribute/">Fixing a Bug</a></h2>
+
+            <ul>
+              <li>Look for bugs labeled as <a href="https://bugs.openjdk.java.net/issues/?jql=project%20%3D%20JDK%20AND%20issuetype%20in%20(Bug%2C%20Enhancement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Open%2C%20New)%20AND%20labels%20in%20(starter%2C%20community_needed%2C%20community-candidate%2C%20community-contributed)%20AND%20assignee%20in%20(EMPTY)"><code>starter</code>/<code>community-candidate</code></a> in <a href="https://bugs.openjdk.java.net">JBS</a>.
+              </li>
+              <li>Bugs must be fixed in a development code line first!</li>
+              <li>Fix the bug in the repository of the team that's responsible for the code
+                <ul>
+                  <li><a href="http://hg.openjdk.java.net/jdk/client/file/tip">http://hg.openjdk.java.net/jdk/client</a> for AWT/Swing problems or <br/>
+                    <a href="http://hg.openjdk.java.net/jdk/hs/file/tip">http://hg.openjdk.java.net/jdk/hs</a> for a JIT bug <br/>
+                    <a href="http://hg.openjdk.java.net/jdk/jdk/file/tip">http://hg.openjdk.java.net/jdk/jdk</a> for everything else.
+                  </li>
+                </ul>
+              </li>
+              <li>Consider all the platforms the OpenJDK may run on</li>
+              <li>Submit your patch / <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/8132374">Webrev</a> to the appropriate mailing list:
+                <ul>
+                  <li><a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34630">
+                      RFR(XS): 8132374: AIX: fix value of os.version property</a> (Author request)</li>
+                  <li><a href="http://mail.openjdk.java.net/pipermail/jdk9-dev/2015-September/thread.html#2663">[patch] JDK-4906983</a> (Contributor request)</li>
+                </ul>
+              </li>
+              <li>Be ready to discuss, defend and <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/">improve</a> your fix
+                <a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34589">several</a>
+                <a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-August/thread.html#34835">rounds</a></li>
+              <li>Find a sponsor</li>
+            </ul>
+
+          </section>
 
         </section>
 
         <section>
-          <h2>OpenJDK Tools - Mercurial</h2>
 
-          <ul>
-            <li><a href="http://mercurial.selenic.com/">Mercurial</a> is a distributed
-              source control system implemented in Python.</li>
-            <li>OpenJDK uses nested sub-repositories (i.e. "<em>forest</em>"):
-              <ul>
-                <li>clone them (corba, hotspot, jaxp, jaxws, jdk, langtools, nashorn) manually:</li>
-                <div>
-                  <pre class="big noshadow" data-trim="true">
-                    <code class="terminal" data-trim="true" data-noescape="true">
+          <section>
+
+            <h2>OpenJDK Tools - Mercurial</h2>
+
+            <ul>
+              <li><a href="http://mercurial.selenic.com/">Mercurial</a> is a distributed
+                source control system implemented in Python.</li>
+              <li>OpenJDK uses nested sub-repositories (i.e. "<em>forest</em>"):
+                <ul>
+                  <li>clone them (corba, hotspot, jaxp, jaxws, jdk, langtools, nashorn) manually:</li>
+                  <div>
+                    <pre class="big noshadow" data-trim="true">
+                      <code class="terminal" data-trim="true" data-noescape="true">
 $ hg clone http:/&#8203;/hg.openjdk.java.net/jdk9/dev jdk9-dev
 $ cd jdk9-dev
 $ hg clone http:/&#8203;/hg.openjdk.java.net/jdk9/dev/corba
 ...
 $ hg clone http:/&#8203;/hg.openjdk.java.net/jdk9/dev/nashorn
-                    </code>
-                  </pre>
-                </div>
-              </ul>
-              <ul>
-                <li>or use the <a href="http://hg.openjdk.java.net/jdk9/jdk9/file/tip/get_source.sh"><code>get_source.sh</code></a>
-                  script which does the same in parallel:</li>
-                <div>
-                  <pre class="big noshadow" data-trim="true">
-                    <code class="terminal" data-trim="true" data-noescape="true">
+                      </code>
+                    </pre>
+                  </div>
+                </ul>
+                <ul>
+                  <li>or use the <a href="http://hg.openjdk.java.net/jdk9/jdk9/file/tip/get_source.sh"><code>get_source.sh</code></a>
+                    script which does the same in parallel:</li>
+                  <div>
+                    <pre class="big noshadow" data-trim="true">
+                      <code class="terminal" data-trim="true" data-noescape="true">
 $ hg clone http:/&#8203;/hg.openjdk.java.net/jdk9/dev jdk9-dev
 $ cd jdk9-dev
 $ sh get_source.sh
-                    </code>
-                  </pre>
-                </div>
-              </ul>
-            </li>
-                <li>Use <a href="http://hg.openjdk.java.net/jdk9/jdk9/file/tip/common/bin/hgforest.sh"><code>common/bin/hgforest.sh</code></a>
-                  to execute <code>hg</code> commands in all repositories</li>
-          </ul>
-        </section>
+                      </code>
+                    </pre>
+                  </div>
+                </ul>
+              </li>
+              <li>Use <a href="http://hg.openjdk.java.net/jdk9/jdk9/file/tip/common/bin/hgforest.sh"><code>common/bin/hgforest.sh</code></a>
+                to execute <code>hg</code> commands in all repositories</li>
+            </ul>
+          </section>
 
-        <section>
-          <h2>OpenJDK Tools - Mercurial</h2>
+          <section>
+            <h2>OpenJDK Tools - Mercurial</h2>
 
-          <ul>
-            <li>In jdk10 the "<em>forests</em>" are gone!
-              <ul>
-                <li><a href="http://openjdk.java.net/jeps/296">JEP 296: Consolidate the JDK Forest into a Single Repository</a></li>
-              </ul>
-            </li>
-            <li>One <em>fat</em> repo</li>
-            <li>Cloning takes longer (not parallelized any more)</li>
-            <li>Less confusing for new users</li>
-                <div>
-                  <pre class="big noshadow" data-trim="true">
-                    <code class="terminal" data-trim="true" data-noescape="true">
+            <ul>
+              <li>In jdk10 the "<em>forests</em>" are gone!
+                <ul>
+                  <li><a href="http://openjdk.java.net/jeps/296">JEP 296: Consolidate the JDK Forest into a Single Repository</a></li>
+                </ul>
+              </li>
+              <li>One <em>fat</em> repo</li>
+              <li>Cloning takes longer (not parallelized any more)</li>
+              <li>Less confusing for new users</li>
+              <div>
+                <pre class="big noshadow" data-trim="true">
+                  <code class="terminal" data-trim="true" data-noescape="true">
 $ hg clone http:/&#8203;/hg.openjdk.java.net/jdk/jdk jdk
 $ cd jdk
-                    </code>
-                  </pre>
-                </div>
-          </ul>
+                  </code>
+                </pre>
+              </div>
+            </ul>
+
+          </section>
         </section>
 
         <section>
@@ -768,86 +808,84 @@ $ unzip -l /tmp/webrev.zip
         </section>
 
         <section>
-          <h2><a href="http://openjdk.java.net/contribute/">Fixing a Bug</a></h2>
 
-          <ul>
-            <li>Look for bugs labeled as <a href="https://bugs.openjdk.java.net/issues/?jql=project%20%3D%20JDK%20AND%20issuetype%20in%20(Bug%2C%20Enhancement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Open%2C%20New)%20AND%20labels%20in%20(starter%2C%20community_needed%2C%20community-candidate%2C%20community-contributed)%20AND%20assignee%20in%20(EMPTY)"><code>starter</code>/<code>community-candidate</code></a> in <a href="https://bugs.openjdk.java.net">JBS</a>.
-            </li>
-            <li>Bugs must be fixed in a development code line first!</li>
-            <li>Fix the bug in the repository of the team that's responsible for the code
-              <ul>
-                <li><a href="http://hg.openjdk.java.net/jdk/client/file/tip">http://hg.openjdk.java.net/jdk/client</a> for AWT/Swing problems or <br/>
-                  <a href="http://hg.openjdk.java.net/jdk/hs/file/tip">http://hg.openjdk.java.net/jdk/hs</a> for a JIT bug <br/>
-                  <a href="http://hg.openjdk.java.net/jdk/jdk/file/tip">http://hg.openjdk.java.net/jdk/jdk</a> for everything else.
-                </li>
-              </ul>
-            </li>
-            <li>Consider all the platforms the OpenJDK may run on</li>
-            <li>Submit your patch / <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/8132374">Webrev</a> to the appropriate mailing list:
-              <ul>
-                <li><a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34630">
-                    RFR(XS): 8132374: AIX: fix value of os.version property</a> (Author request)</li>
-                <li><a href="http://mail.openjdk.java.net/pipermail/jdk9-dev/2015-September/thread.html#2663">[patch] JDK-4906983</a> (Contributor request)</li>
-              </ul>
-            </li>
-            <li>Be ready to discuss, defend and <a href="http://cr.openjdk.java.net/~simonis/webrevs/2015/">improve</a> your fix
-              <a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-July/thread.html#34589">several</a>
-              <a href="http://mail.openjdk.java.net/pipermail/core-libs-dev/2015-August/thread.html#34835">rounds</a></li>
-            <li>Find a sponsor</li>
-          </ul>
+          <section>
+            <h2><a href="http://openjdk.java.net/jeps/0"><b>JEP</b> - The JDK Enhancement-Proposal &amp; Roadmap Process</a></h2>
 
-        </section>
-
-        <section>
-          <h2><a href="http://openjdk.java.net/jeps/0"><b>JEP</b> - The JDK Enhancement-Proposal &amp; Roadmap Process</a></h2>
-
-          <ul>
-            <li>Collect, review, sort, and record proposals for enhancements to the JDK</li>
-            <li><a href="http://openjdk.java.net/jeps/1">JEP 1: JDK Enhancement-Proposal &amp; Roadmap Process</a> defines the process</li>
-            <li>Simpler than a <a href="https://www.jcp.org">Java Community Process</a> (<b>JCP</b>) <a href="https://www.jcp.org/en/jsr/overview">Java Specification Request</a> (<b>JSR</b>)
-              <ul>
-                <li>Specification changes still require a JSR</li>
-              </ul>
-            </li>
-            <li>The JEP process is still dominated by Oracle:
-              <ul>
-                <li>requires endorsement and funding by <a href="http://openjdk.java.net/bylaws#group-lead">Group Leads</a></li>
-                <li>The <a href="http://openjdk.java.net/bylaws#openjdk-lead">OpenJDK Lead</a>
-                  (appointed by Oracle) ultimately<br/> decides which JEPs to include into the Roadmap.</li>
-              </ul>
-            </li>
-            <li>Still attractive for &ldquo;implementation enhancements&rdquo; (i.e. new Ports, GCs, JITs, ..)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2><a href="https://www.jcp.org"><b>JCP</b> - The Java Community Process</a></h2>
-
-          <ul>
-            <li>A formalized mechanism for developing Java specifications</li>
-            <li><b>Not</b> an independent standards organization / legal entity
-              <ul>
-                <li>A vendor consortium dominated by Oracle</li>
+            <ul>
+              <li>Collect, review, sort, and record proposals for enhancements to the JDK</li>
+              <li><a href="http://openjdk.java.net/jeps/1">JEP 1: JDK Enhancement-Proposal &amp; Roadmap Process</a> defines the process</li>
+              <li>Simpler than a <a href="https://www.jcp.org">Java Community Process</a> (<b>JCP</b>) <a href="https://www.jcp.org/en/jsr/overview">Java Specification Request</a> (<b>JSR</b>)
+                <ul>
+                  <li>Specification changes still require a JSR</li>
                 </ul>
-            </li>
-            <li>Membership requires fee for organizations/companies but is free for individuals</li>
-            <li><a href="https://www.jcp.org/en/jsr/overview"><b>JSR</b></a>'s (Java Specification Requests) for proposing and specifying new technologies:
-              <ul>
-                <li>A final JSR provides a free reference implementation and</li>
-                <li>A <a href="https://en.wikipedia.org/wiki/Technology_Compatibility_Kit">TCK</a> (Technology Compatibility Kit) for verification</li>
-              </ul>
-            </li>
-            <li>Currently the JCP specifies three platforms:
-              <a href="https://www.jcp.org/en/jsr/platform?listBy=1&amp;listByType=platform">Java ME</a>,
-              <a href="https://www.jcp.org/en/jsr/platform?listBy=2&amp;listByType=platform">Java SE</a> and
-              <a href="https://www.jcp.org/en/jsr/platform?listBy=3&amp;listByType=platform"><span style="text-decoration: line-through;">Java EE</span></a></li>
-            <li>JCP is being criticized as being a "rubber stamp organization", but see:
-              <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Apache_Harmony#Difficulties_to_obtain_a_TCK_license_from_Sun">Apache vs. Sun on getting access to the TCK</a></li>
-                <li><a href="https://www.jcp.org/en/jsr/results?id=5959">JCP EC rejects JSR 376 (Jigsaw)</a></li>
-              </ul>
-            </li>
-          </ul>
+              </li>
+              <li>The JEP process is still dominated by Oracle:
+                <ul>
+                  <li>requires endorsement and funding by <a href="http://openjdk.java.net/bylaws#group-lead">Group Leads</a></li>
+                  <li>The <a href="http://openjdk.java.net/bylaws#openjdk-lead">OpenJDK Lead</a>
+                    (appointed by Oracle) ultimately<br/> decides which JEPs to include into the Roadmap.</li>
+                </ul>
+              </li>
+              <li>Still attractive for &ldquo;implementation enhancements&rdquo; (i.e. new Ports, GCs, JITs, ..)</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2><a href="https://www.jcp.org"><b>JCP</b> - The Java Community Process</a></h2>
+
+            <ul>
+              <li>A formalized mechanism for developing Java specifications</li>
+              <li><b>Not</b> an independent standards organization / legal entity
+                <ul>
+                  <li>A vendor consortium dominated by Oracle</li>
+                </ul>
+              </li>
+              <li>Membership requires fee for organizations/companies but is free for individuals</li>
+              <li><a href="https://www.jcp.org/en/jsr/overview"><b>JSR</b></a>'s (Java Specification Requests) for proposing and specifying new technologies:
+                <ul>
+                  <li>A final JSR provides a free reference implementation and</li>
+                  <li>A <a href="https://en.wikipedia.org/wiki/Technology_Compatibility_Kit">TCK</a> (Technology Compatibility Kit) for verification</li>
+                </ul>
+              </li>
+              <li>Currently the JCP specifies three platforms:
+                <a href="https://www.jcp.org/en/jsr/platform?listBy=1&amp;listByType=platform">Java ME</a>,
+                <a href="https://www.jcp.org/en/jsr/platform?listBy=2&amp;listByType=platform">Java SE</a> and
+                <a href="https://www.jcp.org/en/jsr/platform?listBy=3&amp;listByType=platform"><span style="text-decoration: line-through;">Java EE</span></a></li>
+              <li>JCP is being criticized as being a "rubber stamp organization", but see:
+                <ul>
+                  <li><a href="https://en.wikipedia.org/wiki/Apache_Harmony#Difficulties_to_obtain_a_TCK_license_from_Sun">Apache vs. Sun on getting access to the TCK</a></li>
+                  <li><a href="https://www.jcp.org/en/jsr/results?id=5959">JCP EC rejects JSR 376 (Jigsaw)</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2>Incubating</h2>
+
+            <ul>
+              <li><a href="http://openjdk.java.net/jeps/11">JEP 11: Incubator Modules</a>
+                <ul>
+                  <li>Introduced in OpenJDK 9</li>
+                  <li>Ship non-final APIs to developers to get feedback</li>
+                  <li>Use <code>jdk.incubator</code> prefix for modules and exported packages</li>
+                  <li>API must be either finalized, substantially improved or removed in the next release</li>
+                  <li>Not part of the Java SE standard!</li>
+               </ul>
+              </li>
+              <li><a href="https://bugs.openjdk.java.net/browse/JDK-8195734">JEP ??: Incubating Language and VM Features</a>
+                <ul>
+                  <li>Fully specified, fully implemented, yet impermanent features</li>
+                  <li>Part of Java SE platform, checked by the corresponding TCK</li>
+                  <li>Disabled by default (use <code>--incubating</code> flag)</li>
+                </ul>
+              </li>
+            </ul>
+
+          </section>
+
         </section>
 
         <section style="height:100%" data-background="images/OracleJavaSE8Overview.png" data-background-size="auto" data-background-color="#ffffff">
@@ -863,8 +901,10 @@ $ unzip -l /tmp/webrev.zip
 
         <section class="demo">
 
-	  <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
-	    <tbody>
+          <section class="demo">
+
+	    <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
+	      <tbody>
 
 <tr><td>102: <a href="http://openjdk.java.net/jeps/102">Process API Updates</a></td></tr>
 <tr><td>110: <a href="http://openjdk.java.net/jeps/110">HTTP 2 Client</a></td></tr>
@@ -897,10 +937,10 @@ $ unzip -l /tmp/webrev.zip
 <tr><td>231: <a href="http://openjdk.java.net/jeps/231">Remove Launch-Time JRE Version Selection</a></td></tr>
 <tr><td>232: <a href="http://openjdk.java.net/jeps/232">Improve Secure Application Performance</a></td></tr>
 
-            </tbody>
-          </table>
-	  <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
-	    <tbody>
+              </tbody>
+            </table>
+	    <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
+	      <tbody>
 
 
 <tr><td>233: <a href="http://openjdk.java.net/jeps/233">Generate Run-Time Compiler Tests Automatically</a></td></tr>
@@ -934,10 +974,10 @@ $ unzip -l /tmp/webrev.zip
 <tr><td>264: <a href="http://openjdk.java.net/jeps/264">Platform Logging API and Service</a></td></tr>
 <tr><td>265: <a href="http://openjdk.java.net/jeps/265">Marlin Graphics Renderer</a></td></tr>
 
-            </tbody>
-          </table>
-	  <table style="font-size: 10.5pt; display: inline; padding: 0 0 0 0; border: none;">
-	    <tbody>
+              </tbody>
+            </table>
+	    <table style="font-size: 10.5pt; display: inline; padding: 0 0 0 0; border: none;">
+	      <tbody>
 
 
 <tr><td>266: <a href="http://openjdk.java.net/jeps/266">More Concurrency Updates</a></td></tr>
@@ -972,15 +1012,15 @@ $ unzip -l /tmp/webrev.zip
 <tr><td>298: <a href="http://openjdk.java.net/jeps/298">Remove Demos and Samples</a></td></tr>
 <tr><td>299: <a href="http://openjdk.java.net/jeps/299">Reorganize Documentation</a></td></tr>
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
 
-        </section>
+          </section>
 
-        <section class="demo">
+          <section class="demo">
 
-	  <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
-	    <tbody>
+	    <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
+	      <tbody>
 
 <tr class="JEP_SE            "><td>102: <a href="http://openjdk.java.net/jeps/102">Process API Updates</a></td></tr>
 <tr class="JEP_JDK           "><td>110: <a href="http://openjdk.java.net/jeps/110">HTTP/2 Client (Incubator)</a></td></tr>
@@ -1013,10 +1053,10 @@ $ unzip -l /tmp/webrev.zip
 <tr class="JEP_JDK           "><td>231: <a href="http://openjdk.java.net/jeps/231">Remove Launch-Time JRE Version Selection</a></td></tr>
 <tr class="JEP_Implementation"><td>232: <a href="http://openjdk.java.net/jeps/232">Improve Secure Application Performance</a></td></tr>
 
-            </tbody>
-          </table>
-	  <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
-	    <tbody>
+              </tbody>
+            </table>
+	    <table style="font-size: 10.5pt; display: inline; padding: 0 6em 0 0; border: none;">
+	      <tbody>
 
 <tr class="JEP_Implementation"><td>233: <a href="http://openjdk.java.net/jeps/233">Generate Run-Time Compiler Tests Automatically</a></td></tr>
 <tr class="JEP_Implementation"><td>235: <a href="http://openjdk.java.net/jeps/235">Test Class-File Attributes Generated by javac</a></td></tr>
@@ -1049,10 +1089,10 @@ $ unzip -l /tmp/webrev.zip
 <tr class="JEP_SE            "><td>264: <a href="http://openjdk.java.net/jeps/264">Platform Logging API and Service</a></td></tr>
 <tr class="JEP_JDK           "><td>265: <a href="http://openjdk.java.net/jeps/265">Marlin Graphics Renderer</a></td></tr>
 
-            </tbody>
-          </table>
-	  <table style="font-size: 10.5pt; display: inline; padding: 0 0 0 0; border: none;">
-	    <tbody>
+              </tbody>
+            </table>
+	    <table style="font-size: 10.5pt; display: inline; padding: 0 0 0 0; border: none;">
+	      <tbody>
 
 <tr class="JEP_SE            "><td>266: <a href="http://openjdk.java.net/jeps/266">More Concurrency Updates</a></td></tr>
 <tr class="JEP_SE            "><td>267: <a href="http://openjdk.java.net/jeps/267">Unicode 8.0</a></td></tr>
@@ -1086,8 +1126,10 @@ $ unzip -l /tmp/webrev.zip
 <tr class="JEP_JDK           "><td>298: <a href="http://openjdk.java.net/jeps/298">Remove Demos and Samples</a></td></tr>
 <tr class="JEP_JDK           "><td>299: <a href="http://openjdk.java.net/jeps/299">Reorganize Documentation</a></td></tr>
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+
+          </section>
         </section>
 
         <section class="demo">
